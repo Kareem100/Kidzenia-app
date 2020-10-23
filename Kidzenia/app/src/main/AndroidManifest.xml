@@ -9,11 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".ArabicNumbersActivity"></activity>
+        <activity android:name=".VideosActivity"></activity>
+        <activity android:name=".ArabicNumbersActivity" />
         <activity android:name=".ArabicLettersActivity" />
         <activity android:name=".EnglishNumbersActivity" />
         <activity android:name=".EnglishLettersActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity">
+        </activity>
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kidzenia</string>
+    <string name="english_letters">الحروف الانجليزية</string>
+    <string name="english_numbers">الارقام الانجليزية</string>
+    <string name="arabic_letters">الحروف العربية</string>
+    <string name="arabic_numbers">الارقام العربية</string>
+    <string name="music_videos">فديوهات</string>
+    <string name="pronounce">تهجأ</string>
+    <string name="english">الانجليزية</string>
+    <string name="arabic">العربية</string>
+</resources>

@@ -9,16 +9,16 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class EnglishLettersActivity extends AppCompatActivity {
 
-    private MediaPlayer mediaPlayer;
+    private MediaPlayer mediaPlayer, music;
     private ImageView background;
     private ListView listView;
-    protected static boolean VISIBLE_BACKGROUND = false;
+    private boolean backPressed;
+    protected static boolean VISIBLE_BACKGROUND = false, playMusic = false;
     private MediaPlayer.OnCompletionListener completionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
@@ -28,6 +28,8 @@ public class EnglishLettersActivity extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
+                        music.start();
+                        playMusic = true;
                         background.setImageDrawable(null);
                     }
                 }, 2000);
@@ -40,7 +42,11 @@ public class EnglishLettersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_data);
 
-        background = findViewById(R.id.english_letters_background);
+        music = MediaPlayer.create(this, R.raw.looped_music);
+        music.setLooping(true);
+        backPressed = false;
+
+        background = findViewById(R.id.display_data_background);
         listView = findViewById(R.id.list_view);
 
         if(!VISIBLE_BACKGROUND) {
@@ -99,9 +105,38 @@ public class EnglishLettersActivity extends AppCompatActivity {
             mediaPlayer = null;
         }
     }
-
+    private void releaseMusic(){
+        music.release();
+        music = null;
+    }
     @Override
     public void onBackPressed() {
         finish();
+        releaseMedia();
+        releaseMusic();
+        backPressed = true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(playMusic)
+            music.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(!backPressed)
+            music.pause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(!backPressed){
+            releaseMusic();
+            releaseMedia();
+        }
     }
 }

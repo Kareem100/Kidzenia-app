@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,10 +14,11 @@ import java.util.ArrayList;
 
 public class EnglishNumbersActivity extends AppCompatActivity {
 
-    private MediaPlayer mediaPlayer;
+    private MediaPlayer mediaPlayer, music;
     private ImageView background;
     private ListView listView;
-    protected static boolean VISIBLE_BACKGROUND = false;
+    private boolean backPressed;
+    protected static boolean VISIBLE_BACKGROUND = false, playMusic = false;
     private MediaPlayer.OnCompletionListener completionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
@@ -28,6 +28,8 @@ public class EnglishNumbersActivity extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
+                        music.start();
+                        playMusic = true;
                         background.setImageDrawable(null);
                     }
                 }, 2000);
@@ -40,13 +42,17 @@ public class EnglishNumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_data);
 
-        background = findViewById(R.id.english_letters_background);
+        music = MediaPlayer.create(this, R.raw.looped_music);
+        music.setLooping(true);
+        backPressed = false;
+
+        background = findViewById(R.id.display_data_background);
         listView = findViewById(R.id.list_view);
 
         if(!VISIBLE_BACKGROUND) {
             background.animate().alpha(1).setDuration(1000);
             VISIBLE_BACKGROUND = true;
-            mediaPlayer = mediaPlayer.create(this, R.raw.sound_the_abc_s);
+            mediaPlayer = mediaPlayer.create(this, R.raw.sound_w);
             mediaPlayer.start();
             mediaPlayer.setVolume(0, 0);
             mediaPlayer.setOnCompletionListener(completionListener);
@@ -85,8 +91,38 @@ public class EnglishNumbersActivity extends AppCompatActivity {
         }
     }
 
+    private void releaseMusic(){
+        music.release();
+        music = null;
+    }
     @Override
     public void onBackPressed() {
         finish();
+        releaseMedia();
+        releaseMusic();
+        backPressed = true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(playMusic)
+            music.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(!backPressed)
+            music.pause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(!backPressed){
+            releaseMusic();
+            releaseMedia();
+        }
     }
 }

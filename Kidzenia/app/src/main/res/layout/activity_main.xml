@@ -13,7 +13,7 @@
 
     <LinearLayout
         android:layout_width="280dp"
-        android:layout_height="460dp"
+        android:layout_height="560dp"
         android:layout_gravity="center"
         android:background="@drawable/transparent_background"
         android:gravity="center"
@@ -26,13 +26,35 @@
             android:src="@drawable/splash_logo"
             android:transitionName="logo_image" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-16dp"
+            android:layout_marginBottom="18dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/main_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/main_lang_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_language" />
+
+        </LinearLayout>
+
         <Button
             android:id="@+id/main_english_letters_btn"
             style="@style/textStyle"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
-            android:text="English Letters" />
+            android:text="@string/english_letters" />
 
         <Button
             android:id="@+id/main_english_numbers_btn"
@@ -41,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:background="@drawable/button_style"
-            android:text="English Numbers" />
+            android:text="@string/english_numbers" />
 
         <Button
             android:id="@+id/main_arabic_letters_btn"
@@ -50,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:background="@drawable/button_style"
-            android:text="Arabic Letters" />
+            android:text="@string/arabic_letters" />
 
         <Button
             android:id="@+id/main_arabic_numbers_btn"
@@ -59,12 +81,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:background="@drawable/button_style"
-            android:text="Arabic Numbers" />
+            android:text="@string/arabic_numbers" />
+
+        <Button
+            android:id="@+id/main_songs_btn"
+            style="@style/textStyle"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/text_border"
+            android:text="@string/music_videos" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="18dp"
             android:orientation="horizontal">
 
             <pl.droidsonroids.gif.GifImageView
