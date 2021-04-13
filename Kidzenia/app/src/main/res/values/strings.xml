@@ -1,14 +1,11 @@
 <resources>
     <string name="app_name">Kidzenia</string>
-
     <string name="english_letters">ENGLISH LETTERS</string>
     <string name="english_numbers">ENGLISH NUMBERS</string>
     <string name="arabic_letters">ARABIC LETTERS</string>
     <string name="arabic_numbers">ARABIC NUMBERS</string>
     <string name="music_videos">MUSIC VIDEOS</string>
     <string name="pronounce">Pronounce</string>
-
     <string name="english">English</string>
     <string name="arabic">Arabic</string>
-
 </resources>

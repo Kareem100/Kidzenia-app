@@ -10,13 +10,13 @@
         android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-    
+
     <ImageView
         android:id="@+id/display_data_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitXY"
         android:alpha="0"
+        android:scaleType="fitXY"
         android:src="@drawable/toys_room" />
 
 </FrameLayout>

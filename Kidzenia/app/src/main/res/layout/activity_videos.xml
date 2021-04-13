@@ -3,31 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#673AB7"
+    android:background="@color/colorPrimary"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".VideosActivity">
-
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left">
+
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/logo_dimensions"
+            android:layout_height="@dimen/logo_dimensions"
             android:background="@drawable/transparent_background"
             android:src="@drawable/splash_logo" />
 
         <pl.droidsonroids.gif.GifImageView
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_width="@dimen/large_gif_dimensions"
+            android:layout_height="@dimen/large_gif_dimensions"
             android:src="@drawable/learn_anim" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/videos_english_letters_btn"
@@ -35,8 +35,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/transparent_background"
-            android:text="English\nLetters"
-            android:textSize="16sp" />
+            android:maxWidth="0dp"
+            android:text="@string/english_letters"
+            android:textSize="@dimen/small_text_size" />
 
         <Button
             android:id="@+id/videos_english_numbers_btn"
@@ -44,8 +45,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
-            android:text="English\nNumbers"
-            android:textSize="16sp" />
+            android:maxWidth="0dp"
+            android:text="@string/english_numbers"
+            android:textSize="@dimen/small_text_size" />
 
         <Button
             android:id="@+id/videos_arabic_letters_btn"
@@ -53,8 +55,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
-            android:text="Arabic\nLetters"
-            android:textSize="16sp" />
+            android:maxWidth="0dp"
+            android:text="@string/arabic_letters"
+            android:textSize="@dimen/small_text_size" />
 
         <Button
             android:id="@+id/videos_arabic_numbers_btn"
@@ -62,8 +65,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
-            android:text="Arabic\nNumbers"
-            android:textSize="16sp" />
+            android:maxWidth="0dp"
+            android:text="@string/arabic_numbers"
+            android:textSize="@dimen/small_text_size" />
 
     </LinearLayout>
 
