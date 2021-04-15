@@ -1,6 +1,6 @@
 # Kidzenia-app
 
-### Game Description 
+### App Description 
 
 An Easily Animated App for Kids. </br> 
 For learning (English Alphabet, Numbers, Arabic Alphabet and Numbers). </br>
