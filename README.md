@@ -16,6 +16,11 @@ In Addition to Some Entertainment Educational Videos. </br>
 
 ***
 
+##### Released apk
+[Download Link](https://drive.google.com/file/d/1kUDfGGdDnCV-Z1nduJcqrXlJPwZ-TYFR/view?usp=sharing)
+
+***
+
 # Screenshots:
 
 ### Splashscreen
