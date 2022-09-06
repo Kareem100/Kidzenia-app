@@ -2,6 +2,7 @@ package com.example.android.kidzenia;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.ImageView;
 
+@SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
 
     private ImageView background, animationImg, logo;
@@ -30,24 +32,17 @@ public class SplashActivity extends AppCompatActivity {
         background.animate().alpha(1f).setDuration(2000).setStartDelay(4000);
         animationImg.animate().alpha(1f).setDuration(1000);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                background.animate().translationY(-2500).alpha(0f).setDuration(2000).setStartDelay(2000);
-                logo.animate().alpha(1f).setDuration(2000).setStartDelay(3000);
-                animationImg.setAlpha(0f);
-            }
+        new Handler().postDelayed(() -> {
+            background.animate().translationY(-2500).alpha(0f).setDuration(2000).setStartDelay(2000);
+            logo.animate().alpha(1f).setDuration(2000).setStartDelay(3000);
+            animationImg.setAlpha(0f);
         }, 6000);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Pair[] pairs = new Pair[1];
-                pairs[0] = new Pair<View, String>(logo, "logo_image");
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SplashActivity.this, pairs);
-                startActivity(new Intent(SplashActivity.this, MainActivity.class), options.toBundle());
-                finish();
-            }
+        new Handler().postDelayed(() -> {
+            Pair<View, String> pairs = new Pair<>(logo, "logo_image");
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SplashActivity.this, pairs);
+            startActivity(new Intent(SplashActivity.this, MainActivity.class), options.toBundle());
+            finish();
         }, 13000);
 
     }
