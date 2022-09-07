@@ -17,6 +17,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -25,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
     private VideoView video;
     private MediaPlayer mediaPlayer, music;
     private ArrayList<LanguageItem> languageItems;
-    private LanguageAdapter adapter;
-    private ImageView languageIcon;
     private Spinner spinner;
     private Button englishLetters, arabicLetters, englishNumbers, arabicNumbers, songs;
     private boolean visibleSpinner;
@@ -37,13 +37,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         video = findViewById(R.id.main_video);
-        languageIcon = findViewById(R.id.main_lang_icon);
         spinner = findViewById(R.id.main_spinner);
         englishLetters = findViewById(R.id.main_english_letters_btn);
         englishNumbers = findViewById(R.id.main_english_numbers_btn);
         arabicLetters = findViewById(R.id.main_arabic_letters_btn);
         arabicNumbers = findViewById(R.id.main_arabic_numbers_btn);
         songs = findViewById(R.id.main_songs_btn);
+        ImageView languageIcon = findViewById(R.id.main_lang_icon);
+        ImageView animalsAnimGif = findViewById(R.id.animals_anim_gif);
+        ImageView busAnimGif = findViewById(R.id.bus_anim_gif);
+
+        Glide.with(this).asGif().load(R.drawable.animals_anim).into(animalsAnimGif);
+        Glide.with(this).asGif().load(R.drawable.bus_anim).into(busAnimGif);
 
         initSpinner();
 
@@ -116,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
         languageItems.add(new LanguageItem(getString(R.string.english), R.drawable.england_flag));
         languageItems.add(new LanguageItem(getString(R.string.arabic), R.drawable.egypt_flag));
 
-        adapter = new LanguageAdapter(this, languageItems);
+        LanguageAdapter adapter = new LanguageAdapter(this, languageItems);
         spinner.setAdapter(adapter);
         visibleSpinner = false;
 

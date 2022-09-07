@@ -4,14 +4,15 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.bumptech.glide.Glide;
 
-import pl.droidsonroids.gif.GifImageView;
+import java.util.ArrayList;
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder> {
 
@@ -38,7 +39,8 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder
     @Override
     public void onBindViewHolder(@NonNull DataViewHolder holder, int position) {
         Data dataItem = dataArrayList.get(position);
-        holder.bind(dataItem.getLetterNumberID(), dataItem.getAnimalAppleID(), dataItem.getName());
+        holder.bind(context, dataItem.getLetterNumberID(),
+                dataItem.getAnimalAppleID(), dataItem.getName());
     }
 
     @Override
@@ -47,8 +49,8 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder
     }
 
     public static class DataViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private final GifImageView letterOrNumberView;
-        private final GifImageView animalOrAppleView;
+        private final ImageView letterOrNumberView;
+        private final ImageView animalOrAppleView;
         private final TextView itemNameView;
         private final OnListItemClickListener onListItemClickListener;
 
@@ -62,9 +64,9 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder
             itemView.setOnClickListener(this);
         }
 
-        void bind(int letterNumberID, int animalAppleID, String itemNameTxt) {
-            letterOrNumberView.setImageResource(letterNumberID);
-            animalOrAppleView.setImageResource(animalAppleID);
+        void bind(Context context, int letterNumberID, int animalAppleID, String itemNameTxt) {
+            Glide.with(context).asDrawable().load(letterNumberID).into(letterOrNumberView);
+            Glide.with(context).asDrawable().load(animalAppleID).into(animalOrAppleView);
             itemNameView.setText(itemNameTxt);
         }
 

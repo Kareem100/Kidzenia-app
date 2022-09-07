@@ -2,10 +2,12 @@ package com.example.android.kidzenia;
 
 public class Data {
 
-    private int letterNumberID, animalAppleID, rawID;
-    private String name;
+    private final int letterNumberID;
+    private final int animalAppleID;
+    private final int rawID;
+    private final String name;
 
-    public Data (int rawID, int letterNumberID, int animalAppleID, String name){
+    public Data(int rawID, int letterNumberID, int animalAppleID, String name) {
         this.letterNumberID = letterNumberID;
         this.animalAppleID = animalAppleID;
         this.name = name;
