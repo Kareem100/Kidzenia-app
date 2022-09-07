@@ -4,41 +4,77 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
-import org.w3c.dom.Text;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
 import pl.droidsonroids.gif.GifImageView;
 
-public class DataAdapter extends ArrayAdapter<Data> {
+public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder> {
 
-    public DataAdapter(@NonNull Context context, ArrayList<Data> data) {
-        super(context, 0, data);
+    private final Context context;
+    private final ArrayList<Data> dataArrayList;
+    private final OnListItemClickListener onListItemClickListener;
+
+    public DataAdapter(Context context, ArrayList<Data> dataArrayList,
+                       OnListItemClickListener onListItemClickListener) {
+        this.context = context;
+        this.dataArrayList = dataArrayList;
+        this.onListItemClickListener = onListItemClickListener;
     }
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View listItemView = convertView;
+    public DataViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(context).inflate(R.layout.list_item,
+                parent, false);
 
-        if(listItemView==null)
-            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+        return new DataViewHolder(itemView, onListItemClickListener);
+    }
 
-        Data d = getItem(position);
-        GifImageView letterOrNumber = listItemView.findViewById(R.id.letters_numbers_gif);
-        GifImageView animalOrApple = listItemView.findViewById(R.id.animals_apples_gif);
-        TextView name = listItemView.findViewById(R.id.animals_apples_name);
+    @Override
+    public void onBindViewHolder(@NonNull DataViewHolder holder, int position) {
+        Data dataItem = dataArrayList.get(position);
+        holder.bind(dataItem.getLetterNumberID(), dataItem.getAnimalAppleID(), dataItem.getName());
+    }
 
-        letterOrNumber.setImageResource(d.getLetterNumberID());
-        animalOrApple.setImageResource(d.getAnimalAppleID());
-        name.setText(d.getName());
+    @Override
+    public int getItemCount() {
+        return dataArrayList.size();
+    }
 
-        return listItemView;
+    public static class DataViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private final GifImageView letterOrNumberView;
+        private final GifImageView animalOrAppleView;
+        private final TextView itemNameView;
+        private final OnListItemClickListener onListItemClickListener;
+
+        public DataViewHolder(@NonNull View itemView,
+                              OnListItemClickListener onListItemClickListener) {
+            super(itemView);
+            this.letterOrNumberView = itemView.findViewById(R.id.letters_numbers_gif);
+            this.animalOrAppleView = itemView.findViewById(R.id.animals_apples_gif);
+            this.itemNameView = itemView.findViewById(R.id.animals_apples_name);
+            this.onListItemClickListener = onListItemClickListener;
+            itemView.setOnClickListener(this);
+        }
+
+        void bind(int letterNumberID, int animalAppleID, String itemNameTxt) {
+            letterOrNumberView.setImageResource(letterNumberID);
+            animalOrAppleView.setImageResource(animalAppleID);
+            itemNameView.setText(itemNameTxt);
+        }
+
+        @Override
+        public void onClick(View view) {
+            onListItemClickListener.onItemClickListener(getBindingAdapterPosition());
+        }
+    }
+
+    public interface OnListItemClickListener {
+        void onItemClickListener(int position);
     }
 }
