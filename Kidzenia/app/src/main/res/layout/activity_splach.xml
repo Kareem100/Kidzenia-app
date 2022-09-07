@@ -11,11 +11,11 @@
         android:scaleType="fitXY"
         android:src="@drawable/startup" />
 
-    <pl.droidsonroids.gif.GifImageView
+    <ImageView
         android:id="@+id/splash_hello_animation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/back_to_school_anim" />
+        tools:src="@drawable/back_to_school_anim" />
 
     <ImageView
         android:id="@+id/splash_background_1"

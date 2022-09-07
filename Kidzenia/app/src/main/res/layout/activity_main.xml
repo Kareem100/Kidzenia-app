@@ -23,7 +23,8 @@
             android:layout_width="@dimen/logo_dimensions"
             android:layout_height="@dimen/logo_dimensions"
             android:src="@drawable/splash_logo"
-            android:transitionName="logo_image" />
+            android:transitionName="logo_image"
+            tools:ignore="ContentDescription" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,7 +44,8 @@
                 android:id="@+id/main_lang_icon"
                 android:layout_width="@dimen/main_menu_spinner_dimensions"
                 android:layout_height="@dimen/main_menu_spinner_dimensions"
-                android:src="@drawable/ic_language" />
+                android:src="@drawable/ic_language"
+                tools:ignore="ContentDescription" />
 
         </LinearLayout>
 
@@ -97,15 +99,19 @@
             android:layout_marginTop="@dimen/xlarge_spacing"
             android:orientation="horizontal">
 
-            <pl.droidsonroids.gif.GifImageView
+            <ImageView
+                android:id="@+id/animals_anim_gif"
                 android:layout_width="@dimen/img_dimensions"
                 android:layout_height="@dimen/img_dimensions"
-                android:src="@drawable/animals_anim" />
+                tools:src="@drawable/animals_anim"
+                tools:ignore="ContentDescription" />
 
-            <pl.droidsonroids.gif.GifImageView
+            <ImageView
+                android:id="@+id/bus_anim_gif"
                 android:layout_width="@dimen/img_dimensions"
                 android:layout_height="@dimen/img_dimensions"
-                android:src="@drawable/bus_anim" />
+                android:src="@drawable/bus_anim"
+                tools:ignore="ContentDescription" />
 
         </LinearLayout>
 

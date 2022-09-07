@@ -11,6 +11,8 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
 
@@ -24,6 +26,8 @@ public class SplashActivity extends AppCompatActivity {
         background = findViewById(R.id.splash_background_1);
         animationImg = findViewById(R.id.splash_hello_animation);
         logo = findViewById(R.id.splash_logo);
+
+        Glide.with(this).asGif().load(R.drawable.back_to_school_anim).into(animationImg);
 
         background.setAlpha(0f);
         animationImg.setAlpha(0f);

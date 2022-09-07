@@ -7,25 +7,28 @@
     android:gravity="center"
     android:orientation="horizontal">
 
-    <pl.droidsonroids.gif.GifImageView
+    <ImageView
         android:id="@+id/letters_numbers_gif"
         android:layout_width="0dp"
         android:layout_height="@dimen/img_dimensions"
         android:layout_weight="1"
-        tools:src="@drawable/number_1" />
+        tools:src="@drawable/number_1"
+        tools:ignore="ContentDescription" />
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UseCompoundDrawables">
 
-        <pl.droidsonroids.gif.GifImageView
+        <ImageView
             android:id="@+id/animals_apples_gif"
             android:layout_width="@dimen/img_dimensions"
             android:layout_height="@dimen/img_dimensions"
-            tools:src="@drawable/apple_1" />
+            tools:src="@drawable/apple_1"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/animals_apples_name"
@@ -43,12 +46,14 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UseCompoundDrawables">
 
-        <pl.droidsonroids.gif.GifImageView
+        <ImageView
             android:layout_width="@dimen/img_dimensions"
             android:layout_height="@dimen/img_dimensions"
-            tools:src="@drawable/play_button_anim" />
+            tools:src="@drawable/play_button_anim"
+            tools:ignore="ContentDescription" />
 
         <TextView
             style="@style/textStyle"
