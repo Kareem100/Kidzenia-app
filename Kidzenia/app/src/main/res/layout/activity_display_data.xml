@@ -6,8 +6,8 @@
     android:background="@drawable/inside_class"
     tools:context=".EnglishLettersActivity">
 
-    <ListView
-        android:id="@+id/list_view"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -17,6 +17,7 @@
         android:layout_height="match_parent"
         android:alpha="0"
         android:scaleType="fitXY"
-        android:src="@drawable/toys_room" />
+        android:src="@drawable/toys_room"
+        tools:ignore="ContentDescription" />
 
 </FrameLayout>

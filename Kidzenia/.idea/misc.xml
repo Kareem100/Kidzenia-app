@@ -4,12 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1265" />
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/activity_display_data.xml" value="0.19166666666666668" />
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/list_item.xml" value="0.20416666666666666" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1265" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1265" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
