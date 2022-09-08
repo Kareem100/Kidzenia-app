@@ -2,25 +2,20 @@ package com.example.android.kidzenia;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -57,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         initSpinner();
 
-        music = music.create(this, R.raw.looped_music);
+        music = MediaPlayer.create(this, R.raw.looped_music);
         music.setLooping(true);
         music.start();
 
@@ -66,63 +61,32 @@ public class MainActivity extends AppCompatActivity {
         video.start();
         songs.animate().scaleX(0.8f).setDuration(3000);
 
-        languageIcon.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                if(!visibleSpinner){
-                    spinner.setVisibility(View.VISIBLE);
-                    visibleSpinner = true;
-                }
+        languageIcon.setOnClickListener(view -> {
+            if(!visibleSpinner){
+                spinner.setVisibility(View.VISIBLE);
+                visibleSpinner = true;
+            }
 
-                else {
-                    spinner.setVisibility(View.GONE);
-                    visibleSpinner = false;
-                }
+            else {
+                spinner.setVisibility(View.GONE);
+                visibleSpinner = false;
             }
         });
-        englishLetters.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, EnglishLettersActivity.class));
-            }
-        });
-        englishNumbers.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, EnglishNumbersActivity.class));
-            }
-        });
-        arabicLetters.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, ArabicLettersActivity.class));
-            }
-        });
-        arabicNumbers.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, ArabicNumbersActivity.class));
-            }
-        });
-        songs.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, VideosActivity.class));
-            }
-        });
+        englishLetters.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, EnglishLettersActivity.class)));
+        englishNumbers.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, EnglishNumbersActivity.class)));
+        arabicLetters.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, ArabicLettersActivity.class)));
+        arabicNumbers.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, ArabicNumbersActivity.class)));
+        songs.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, VideosActivity.class)));
 
-        video.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer media) {
-                releaseVideo();
-                mediaPlayer = media;
-                mediaPlayer.setLooping(true);
-            }
+        video.setOnPreparedListener(media -> {
+            releaseVideo();
+            mediaPlayer = media;
+            mediaPlayer.setLooping(true);
         });
     }
 
     private void initSpinner(){
-        languageItems = new ArrayList<LanguageItem>();
+        languageItems = new ArrayList<>();
         languageItems.add(new LanguageItem(getString(R.string.english), R.drawable.england_flag));
         languageItems.add(new LanguageItem(getString(R.string.arabic), R.drawable.egypt_flag));
 
@@ -145,13 +109,13 @@ public class MainActivity extends AppCompatActivity {
                     currentLocale = CurrentLocale.ARABIC;
                 }
                 else {
-                    englishLetters.setText("English Letters");
-                    englishNumbers.setText("English Numbers");
-                    arabicLetters.setText("Arabic Letters");
-                    arabicNumbers.setText("Arabic Numbers");
-                    songs.setText("Music Videos");
-                    languageItems.get(0).setLanguage("English");
-                    languageItems.get(1).setLanguage("Arabic");
+                    englishLetters.setText(getString(R.string.english_letters));
+                    englishNumbers.setText(getString(R.string.english_numbers));
+                    arabicLetters.setText(getString(R.string.arabic_letters));
+                    arabicNumbers.setText(getString(R.string.arabic_numbers));
+                    songs.setText(getString(R.string.music_videos));
+                    languageItems.get(0).setLanguage(getString(R.string.english));
+                    languageItems.get(1).setLanguage(getString(R.string.arabic));
                     currentLocale = CurrentLocale.ENGLISH;
                 }
             }
