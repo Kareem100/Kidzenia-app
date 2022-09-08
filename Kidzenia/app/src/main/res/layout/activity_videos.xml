@@ -19,10 +19,11 @@
             android:background="@drawable/transparent_background"
             android:src="@drawable/splash_logo" />
 
-        <pl.droidsonroids.gif.GifImageView
+        <ImageView
+            android:id="@+id/learn_anim_gif"
             android:layout_width="@dimen/large_gif_dimensions"
             android:layout_height="@dimen/large_gif_dimensions"
-            android:src="@drawable/learn_anim" />
+            tools:src="@drawable/learn_anim" />
     </LinearLayout>
 
     <LinearLayout

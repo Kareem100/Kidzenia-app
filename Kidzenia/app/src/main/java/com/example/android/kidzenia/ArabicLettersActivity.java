@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class ArabicLettersActivity extends AppCompatActivity
-        implements DataAdapter.OnListItemClickListener{
+        implements DataAdapter.OnListItemClickListener {
 
     private ArrayList<Data> dataArrayList;
     private MediaPlayer mediaPlayer, music;
@@ -25,12 +25,15 @@ public class ArabicLettersActivity extends AppCompatActivity
         public void onCompletion(MediaPlayer mediaPlayer) {
             Log.d("TAG", "onCompletion: REACHED !!!");
             releaseMedia();
-            if(background.getDrawable()!=null){
+            if (background.getDrawable() != null) {
                 background.animate().alpha(0).setDuration(1000);
                 new Handler().postDelayed(() -> {
-                    music.start();
-                    playMusic = true;
-                    background.setImageDrawable(null);
+                    if (music != null) {
+                        VISIBLE_BACKGROUND = false;
+                        music.start();
+                        playMusic = true;
+                        background.setImageDrawable(null);
+                    }
                 }, 2000);
             }
         }
@@ -50,10 +53,13 @@ public class ArabicLettersActivity extends AppCompatActivity
         recyclerView.setLayoutManager(new LinearLayoutManager(this,
                 LinearLayoutManager.VERTICAL, false));
 
-        if(!VISIBLE_BACKGROUND) {
+        if (!VISIBLE_BACKGROUND) {
             background.animate().alpha(1).setDuration(1000);
             VISIBLE_BACKGROUND = true;
-            mediaPlayer = MediaPlayer.create(this, R.raw.sound_w);
+            playMusic = false;
+            final int sound_id = (MainActivity.currentLocale == MainActivity.CurrentLocale.ARABIC)
+                    ? R.raw.sound_arabic_alphabet_in_arabic : R.raw.sound_arabic_alphabet_in_english;
+            mediaPlayer = MediaPlayer.create(this, sound_id);
             mediaPlayer.start();
             mediaPlayer.setOnCompletionListener(completionListener);
         }
@@ -101,16 +107,18 @@ public class ArabicLettersActivity extends AppCompatActivity
         mediaPlayer.setOnCompletionListener(completionListener);
     }
 
-    private void releaseMedia(){
+    private void releaseMedia() {
         if (mediaPlayer != null) {
             mediaPlayer.release();
             mediaPlayer = null;
         }
     }
-    private void releaseMusic(){
+
+    private void releaseMusic() {
         music.release();
         music = null;
     }
+
     @Override
     public void onBackPressed() {
         finish();
@@ -122,23 +130,24 @@ public class ArabicLettersActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-        if(playMusic)
+        if (playMusic)
             music.start();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        if(!backPressed)
+        if (!backPressed)
             music.pause();
     }
 
     @Override
     protected void onDestroy() {
-        if(!backPressed){
+        super.onDestroy();
+        if (!backPressed) {
             releaseMusic();
             releaseMedia();
         }
-        super.onDestroy();
+        playMusic = true;
     }
 }

@@ -30,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
     private Spinner spinner;
     private Button englishLetters, arabicLetters, englishNumbers, arabicNumbers, songs;
     private boolean visibleSpinner;
+    public static CurrentLocale currentLocale = CurrentLocale.ENGLISH;
+
+    public enum CurrentLocale {
+        ENGLISH, ARABIC
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -137,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
                     songs.setText("فديوهات");
                     languageItems.get(0).setLanguage("الانجليزية");
                     languageItems.get(1).setLanguage("العربية");
+                    currentLocale = CurrentLocale.ARABIC;
                 }
                 else {
                     englishLetters.setText("English Letters");
@@ -146,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
                     songs.setText("Music Videos");
                     languageItems.get(0).setLanguage("English");
                     languageItems.get(1).setLanguage("Arabic");
+                    currentLocale = CurrentLocale.ENGLISH;
                 }
             }
 

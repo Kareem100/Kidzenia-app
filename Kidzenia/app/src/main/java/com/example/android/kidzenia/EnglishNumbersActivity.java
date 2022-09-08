@@ -26,9 +26,12 @@ public class EnglishNumbersActivity extends AppCompatActivity
             if (background.getDrawable() != null) {
                 background.animate().alpha(0).setDuration(1000);
                 new Handler().postDelayed(() -> {
-                    music.start();
-                    playMusic = true;
-                    background.setImageDrawable(null);
+                    if (music != null) {
+                        VISIBLE_BACKGROUND = false;
+                        music.start();
+                        playMusic = true;
+                        background.setImageDrawable(null);
+                    }
                 }, 2000);
             }
         }
@@ -51,7 +54,10 @@ public class EnglishNumbersActivity extends AppCompatActivity
         if (!VISIBLE_BACKGROUND) {
             background.animate().alpha(1).setDuration(1000);
             VISIBLE_BACKGROUND = true;
-            mediaPlayer = MediaPlayer.create(this, R.raw.sound_w);
+            playMusic = false;
+            final int sound_id = (MainActivity.currentLocale == MainActivity.CurrentLocale.ARABIC)
+                    ? R.raw.sound_english_numbers_in_arabic : R.raw.sound_english_numbers_in_english;
+            mediaPlayer = MediaPlayer.create(this, sound_id);
             mediaPlayer.start();
             mediaPlayer.setOnCompletionListener(completionListener);
         }
@@ -122,5 +128,6 @@ public class EnglishNumbersActivity extends AppCompatActivity
             releaseMusic();
             releaseMedia();
         }
+        playMusic = true;
     }
 }
