@@ -11,13 +11,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class LanguageAdapter extends ArrayAdapter<LanguageItem> {
 
-    public LanguageAdapter(Context context, ArrayList<LanguageItem> languageItems){
+    public LanguageAdapter(Context context, ArrayList<LanguageItem> languageItems) {
         super(context, 0, languageItems);
     }
 
@@ -32,8 +30,8 @@ public class LanguageAdapter extends ArrayAdapter<LanguageItem> {
         return initView(position, convertView, parent);
     }
 
-    private View initView(int position, View convertView, ViewGroup parent){
-        if(convertView == null)
+    private View initView(int position, View convertView, ViewGroup parent) {
+        if (convertView == null)
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.spinner_layout, parent, false);
 
         ImageView flag = convertView.findViewById(R.id.spinner_image_flag);

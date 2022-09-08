@@ -3,7 +3,7 @@ package com.example.android.kidzenia;
 public class LanguageItem {
 
     private String language;
-    private int countryFlag;
+    private final int countryFlag;
 
     public LanguageItem(String language, int countryFlag) {
         this.language = language;

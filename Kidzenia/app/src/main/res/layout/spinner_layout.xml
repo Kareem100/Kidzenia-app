@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
@@ -7,15 +8,16 @@
         android:id="@+id/spinner_image_flag"
         android:layout_width="@dimen/spinner_view_dimensions"
         android:layout_height="@dimen/spinner_view_dimensions"
-        android:layout_marginLeft="@dimen/small_spacing"
-        android:src="@drawable/england_flag" />
+        android:layout_marginStart="@dimen/small_spacing"
+        android:src="@drawable/england_flag"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/spinner_language"
         style="@style/textStyle"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/spinner_view_dimensions"
-        android:layout_marginLeft="@dimen/medium_spacing"
+        android:layout_marginStart="@dimen/medium_spacing"
         android:layout_toEndOf="@id/spinner_image_flag"
         android:gravity="center"
         android:src="@drawable/england_flag"
