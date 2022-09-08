@@ -5,10 +5,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.bumptech.glide.Glide;
 
 public class VideosActivity extends AppCompatActivity {
 
@@ -27,6 +30,9 @@ public class VideosActivity extends AppCompatActivity {
         arabicLetters = findViewById(R.id.videos_arabic_letters_btn);
         arabicNumbers = findViewById(R.id.videos_arabic_numbers_btn);
         videoView = findViewById(R.id.videos_video_view);
+        ImageView learnAnimGif = findViewById(R.id.learn_anim_gif);
+
+        Glide.with(this).asGif().load(R.drawable.learn_anim).into(learnAnimGif);
 
         uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.english_alphabet_song);
         videoView.setVideoURI(uri);
