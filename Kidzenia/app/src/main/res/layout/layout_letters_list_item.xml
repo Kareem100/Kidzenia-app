@@ -3,7 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/letters_list_item_height"
-    android:background="@drawable/transparent_background"
+    android:layout_margin="@dimen/small_spacing"
+    android:background="@drawable/transparent_bg_with_border"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
     android:gravity="center"
     android:orientation="horizontal">
 
@@ -12,8 +16,8 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/img_dimensions"
         android:layout_weight="1"
-        tools:src="@drawable/number_1"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/number_1" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -27,8 +31,8 @@
             android:id="@+id/animals_apples_gif"
             android:layout_width="@dimen/img_dimensions"
             android:layout_height="@dimen/img_dimensions"
-            tools:src="@drawable/apple_1"
-            tools:ignore="ContentDescription" />
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/apple_1" />
 
         <TextView
             android:id="@+id/animals_apples_name"
@@ -52,10 +56,11 @@
         <ImageView
             android:layout_width="@dimen/img_dimensions"
             android:layout_height="@dimen/img_dimensions"
-            tools:src="@drawable/play_button_anim"
-            tools:ignore="ContentDescription" />
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/play_button_anim" />
 
         <TextView
+            android:id="@+id/pronounce_text"
             style="@style/textStyle"
             android:layout_width="100dp"
             android:layout_height="wrap_content"

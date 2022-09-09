@@ -16,7 +16,7 @@
         <activity android:name=".ArabicLettersActivity" />
         <activity android:name=".EnglishNumbersActivity" />
         <activity android:name=".EnglishLettersActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">

@@ -4,6 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1265" />
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/drawable/transparent_background.xml" value="0.1215" />
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/drawable/transparent_background_v2.xml" value="0.1215" />
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/drawable/transparent_bg_noborder.xml" value="0.1215" />
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/drawable/transparent_bg_with_border.xml" value="0.1215" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/activity_display_data.xml" value="0.19166666666666668" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/activity_splach.xml" value="0.1" />

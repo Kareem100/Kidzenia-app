@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/transparent_background">
+            android:background="@drawable/transparent_bg_with_border">
 
             <ImageView
                 android:id="@+id/video_play_icon"
@@ -46,6 +46,8 @@
                 android:layout_centerVertical="true"
                 android:layout_margin="@dimen/medium_spacing"
                 android:layout_toEndOf="@id/video_play_icon"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:src="@drawable/ic_play_24"
                 android:textColor="#FFF"
                 android:textSize="@dimen/small_text_size"
