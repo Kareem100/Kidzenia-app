@@ -19,4 +19,6 @@
     <dimen name="medium_spacing">8dp</dimen>
     <dimen name="large_spacing">12dp</dimen>
     <dimen name="xlarge_spacing">18dp</dimen>
+    <dimen name="card_corner_radius">18dp</dimen>
+    <dimen name="card_elevation">12dp</dimen>
 </resources>

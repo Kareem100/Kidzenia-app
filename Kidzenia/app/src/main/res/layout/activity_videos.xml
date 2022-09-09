@@ -1,81 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
     tools:context=".VideosActivity">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start">
-
-        <ImageView
-            android:layout_width="@dimen/logo_dimensions"
-            android:layout_height="@dimen/logo_dimensions"
-            android:background="@drawable/transparent_background"
-            android:src="@drawable/splash_logo"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/learn_anim_gif"
-            android:layout_width="@dimen/large_gif_dimensions"
-            android:layout_height="@dimen/large_gif_dimensions"
-            tools:ignore="ContentDescription"
-            tools:src="@drawable/learn_anim" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/videos_english_letters_btn"
-            style="@style/textStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/transparent_background"
-            android:maxWidth="0dp"
-            android:text="@string/english_letters"
-            android:textSize="@dimen/small_text_size" />
-
-        <Button
-            android:id="@+id/videos_english_numbers_btn"
-            style="@style/textStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_style"
-            android:maxWidth="0dp"
-            android:text="@string/english_numbers"
-            android:textSize="@dimen/small_text_size" />
-
-        <Button
-            android:id="@+id/videos_arabic_letters_btn"
-            style="@style/textStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_style"
-            android:maxWidth="0dp"
-            android:text="@string/arabic_letters"
-            android:textSize="@dimen/small_text_size" />
-
-        <Button
-            android:id="@+id/videos_arabic_numbers_btn"
-            style="@style/textStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_style"
-            android:maxWidth="0dp"
-            android:text="@string/arabic_numbers"
-            android:textSize="@dimen/small_text_size" />
-
-    </LinearLayout>
-
-    <VideoView
-        android:id="@+id/videos_video_view"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/videos_recycler_view"
+        android:layout_width="match_parent"
         android:layout_height="match_parent" />
-</LinearLayout>
+</RelativeLayout>

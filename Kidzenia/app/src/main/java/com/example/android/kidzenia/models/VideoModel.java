@@ -1,27 +1,22 @@
 package com.example.android.kidzenia.models;
 
-import android.graphics.Bitmap;
+import android.net.Uri;
 
 public class VideoModel {
     private final String name;
-    private final String path;
-    private final Bitmap thumbnail;
+    private final Uri path;
 
-    public VideoModel(String name, String path, Bitmap thumbnail) {
+    public VideoModel(String name, Uri path) {
         this.name = name;
         this.path = path;
-        this.thumbnail = thumbnail;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getPath() {
+    public Uri getPath() {
         return path;
     }
 
-    public Bitmap getThumbnail() {
-        return thumbnail;
-    }
 }

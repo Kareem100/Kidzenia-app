@@ -32,7 +32,7 @@ public class LettersAdapter extends RecyclerView.Adapter<LettersAdapter.DataView
     @NonNull
     @Override
     public DataViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(context).inflate(R.layout.letters_numbers_list_item,
+        View itemView = LayoutInflater.from(context).inflate(R.layout.layout_letters_list_item,
                 parent, false);
 
         return new DataViewHolder(itemView, onListItemClickListener);
