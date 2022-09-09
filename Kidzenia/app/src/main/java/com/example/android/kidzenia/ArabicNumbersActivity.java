@@ -9,12 +9,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.android.kidzenia.adapters.LettersAdapter;
+import com.example.android.kidzenia.models.LetterModel;
+
 import java.util.ArrayList;
 
 public class ArabicNumbersActivity extends AppCompatActivity
-        implements DataAdapter.OnListItemClickListener {
+        implements LettersAdapter.OnListItemClickListener {
 
-    private ArrayList<Data> dataArrayList;
+    private ArrayList<LetterModel> letterModelArrayList;
     private MediaPlayer mediaPlayer, music;
     private ImageView background;
     private boolean backPressed;
@@ -62,27 +65,27 @@ public class ArabicNumbersActivity extends AppCompatActivity
             mediaPlayer.setOnCompletionListener(completionListener);
         }
 
-        dataArrayList = new ArrayList<>();
-        dataArrayList.add(new Data(R.raw.sound_number_1_arabic, R.drawable.arabic_number_1, R.drawable.apple_1, "واحد"));
-        dataArrayList.add(new Data(R.raw.sound_number_2_arabic, R.drawable.arabic_number_2, R.drawable.apples_2, "اثنان"));
-        dataArrayList.add(new Data(R.raw.sound_number_3_arabic, R.drawable.arabic_number_3, R.drawable.apples_3, "ثلاثة"));
-        dataArrayList.add(new Data(R.raw.sound_number_4_arabic, R.drawable.arabic_number_4, R.drawable.apples_4, "اربعة"));
-        dataArrayList.add(new Data(R.raw.sound_number_5_arabic, R.drawable.arabic_number_5, R.drawable.apples_5, "خمسة"));
-        dataArrayList.add(new Data(R.raw.sound_number_6_arabic, R.drawable.arabic_number_6, R.drawable.apples_6, "ستة"));
-        dataArrayList.add(new Data(R.raw.sound_number_7_arabic, R.drawable.arabic_number_7, R.drawable.apples_7, "سبعة"));
-        dataArrayList.add(new Data(R.raw.sound_number_8_arabic, R.drawable.arabic_number_8, R.drawable.apples_8, "ثمانية"));
-        dataArrayList.add(new Data(R.raw.sound_number_9_arabic, R.drawable.arabic_number_9, R.drawable.apples_9, "تسعة"));
-        dataArrayList.add(new Data(R.raw.sound_number_10_arabic, R.drawable.arabic_number_10, R.drawable.apples_10, "عشرة"));
+        letterModelArrayList = new ArrayList<>();
+        letterModelArrayList.add(new LetterModel(R.raw.sound_number_1_arabic, R.drawable.arabic_number_1, R.drawable.apple_1, "واحد"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_number_2_arabic, R.drawable.arabic_number_2, R.drawable.apples_2, "اثنان"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_number_3_arabic, R.drawable.arabic_number_3, R.drawable.apples_3, "ثلاثة"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_number_4_arabic, R.drawable.arabic_number_4, R.drawable.apples_4, "اربعة"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_number_5_arabic, R.drawable.arabic_number_5, R.drawable.apples_5, "خمسة"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_number_6_arabic, R.drawable.arabic_number_6, R.drawable.apples_6, "ستة"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_number_7_arabic, R.drawable.arabic_number_7, R.drawable.apples_7, "سبعة"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_number_8_arabic, R.drawable.arabic_number_8, R.drawable.apples_8, "ثمانية"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_number_9_arabic, R.drawable.arabic_number_9, R.drawable.apples_9, "تسعة"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_number_10_arabic, R.drawable.arabic_number_10, R.drawable.apples_10, "عشرة"));
 
-        DataAdapter dataAdapter = new DataAdapter(this, dataArrayList, this);
-        recyclerView.setAdapter(dataAdapter);
+        LettersAdapter lettersAdapter = new LettersAdapter(this, letterModelArrayList, this);
+        recyclerView.setAdapter(lettersAdapter);
     }
 
     @Override
     public void onItemClickListener(int position) {
         releaseMedia();
         mediaPlayer = MediaPlayer.create(ArabicNumbersActivity.this,
-                dataArrayList.get(position).getRawID());
+                letterModelArrayList.get(position).getRawID());
         mediaPlayer.start();
         mediaPlayer.setOnCompletionListener(completionListener);
     }

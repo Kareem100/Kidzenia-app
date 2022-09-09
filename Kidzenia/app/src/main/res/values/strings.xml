@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Kidzenia</string>
+    <string name="english_alphabet_song_1">English Alphabet Song #1</string>
+    <string name="english_numbers_song_1">English Numbers Song #1</string>
+    <string name="arabic_alphabet_song_1">Arabic Alphabet Song #1</string>
+    <string name="arabic_numbers_song_1">Arabic Numbers Song #1</string>
     <string name="english_letters">ENGLISH LETTERS</string>
     <string name="english_numbers">ENGLISH NUMBERS</string>
     <string name="arabic_letters">ARABIC LETTERS</string>
@@ -8,4 +12,5 @@
     <string name="pronounce">Pronounce</string>
     <string name="english">English</string>
     <string name="arabic">Arabic</string>
+
 </resources>

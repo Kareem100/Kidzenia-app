@@ -1,4 +1,4 @@
-package com.example.android.kidzenia;
+package com.example.android.kidzenia.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,12 +11,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.android.kidzenia.models.LanguageModel;
+import com.example.android.kidzenia.R;
+
 import java.util.ArrayList;
 
-public class LanguageAdapter extends ArrayAdapter<LanguageItem> {
+public class LanguageAdapter extends ArrayAdapter<LanguageModel> {
 
-    public LanguageAdapter(Context context, ArrayList<LanguageItem> languageItems) {
-        super(context, 0, languageItems);
+    public LanguageAdapter(Context context, ArrayList<LanguageModel> languageModels) {
+        super(context, 0, languageModels);
     }
 
     @NonNull
@@ -32,7 +35,7 @@ public class LanguageAdapter extends ArrayAdapter<LanguageItem> {
 
     private View initView(int position, View convertView, ViewGroup parent) {
         if (convertView == null)
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.spinner_layout, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.layout_spinner, parent, false);
 
         ImageView flag = convertView.findViewById(R.id.spinner_image_flag);
         TextView lang = convertView.findViewById(R.id.spinner_language);

@@ -10,12 +10,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.android.kidzenia.adapters.LettersAdapter;
+import com.example.android.kidzenia.models.LetterModel;
+
 import java.util.ArrayList;
 
 public class ArabicLettersActivity extends AppCompatActivity
-        implements DataAdapter.OnListItemClickListener {
+        implements LettersAdapter.OnListItemClickListener {
 
-    private ArrayList<Data> dataArrayList;
+    private ArrayList<LetterModel> letterModelArrayList;
     private MediaPlayer mediaPlayer, music;
     private ImageView background;
     private boolean backPressed;
@@ -64,45 +67,45 @@ public class ArabicLettersActivity extends AppCompatActivity
             mediaPlayer.setOnCompletionListener(completionListener);
         }
 
-        dataArrayList = new ArrayList<>();
-        dataArrayList.add(new Data(R.raw.sound_arabic_1, R.drawable.arabic_alphabet_1, R.drawable.arabic_animal_rabbit, "أرنب"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_2, R.drawable.arabic_alphabet_2, R.drawable.arabic_animal_duck, "بطة"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_3, R.drawable.arabic_alphabet_3, R.drawable.arabic_animal_crocodile, "تمساح"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_4, R.drawable.arabic_alphabet_4, R.drawable.arabic_animal_fox, "ثعلب"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_5, R.drawable.arabic_alphabet_5, R.drawable.arabic_animal_camel, "جمل"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_6, R.drawable.arabic_alphabet_6, R.drawable.arabic_animal_horse, "حصان"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_7, R.drawable.arabic_alphabet_7, R.drawable.arabic_animal_pig, "خنزير"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_8, R.drawable.arabic_alphabet_8, R.drawable.arabic_animal_hen, "ديك"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_9, R.drawable.arabic_alphabet_9, R.drawable.arabic_animal_wolf, "ذئب"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_10, R.drawable.arabic_alphabet_10, R.drawable.arabic_animal_racoon, "راكون"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_11, R.drawable.arabic_alphabet_11, R.drawable.arabic_animal_giraf, "زرافة"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_12, R.drawable.arabic_alphabet_12, R.drawable.arabic_animal_fish, "سمكة"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_13, R.drawable.arabic_alphabet_13, R.drawable.arabic_animal_monkey, "شمبانزى"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_14, R.drawable.arabic_alphabet_14, R.drawable.arabic_animal_falcon, "صقر"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_15, R.drawable.arabic_alphabet_15, R.drawable.arabic_animal_frog, "ضفدع"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_16, R.drawable.arabic_alphabet_16, R.drawable.arabic_animal_peacock, "طاووس"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_17, R.drawable.arabic_alphabet_17, R.drawable.arabic_animal_antelope, "ظبى"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_18, R.drawable.arabic_alphabet_18, R.drawable.arabic_animal_bird, "عصفور"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_19, R.drawable.arabic_alphabet_19, R.drawable.arabic_animal_crow, "غراب"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_20, R.drawable.arabic_alphabet_20, R.drawable.arabic_animal_elephant, "فيل"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_21, R.drawable.arabic_alphabet_21, R.drawable.arabic_animal_cat, "قطة"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_22, R.drawable.arabic_alphabet_22, R.drawable.arabic_animal_dog, "كلب"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_23, R.drawable.arabic_alphabet_23, R.drawable.arabic_animal_lama, "لاما"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_24, R.drawable.arabic_alphabet_24, R.drawable.arabic_animal_sheep, "ماعز"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_25, R.drawable.arabic_alphabet_25, R.drawable.arabic_animal_tiger, "نمر"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_26, R.drawable.arabic_alphabet_26, R.drawable.arabic_animal_hoopoe, "هدهد"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_27, R.drawable.arabic_alphabet_27, R.drawable.arabic_animal_rhino, "وحيد القرن"));
-        dataArrayList.add(new Data(R.raw.sound_arabic_28, R.drawable.arabic_alphabet_28, R.drawable.arabic_animal_dragonfly, "يعسوب"));
+        letterModelArrayList = new ArrayList<>();
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_1, R.drawable.arabic_alphabet_1, R.drawable.arabic_animal_rabbit, "أرنب"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_2, R.drawable.arabic_alphabet_2, R.drawable.arabic_animal_duck, "بطة"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_3, R.drawable.arabic_alphabet_3, R.drawable.arabic_animal_crocodile, "تمساح"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_4, R.drawable.arabic_alphabet_4, R.drawable.arabic_animal_fox, "ثعلب"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_5, R.drawable.arabic_alphabet_5, R.drawable.arabic_animal_camel, "جمل"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_6, R.drawable.arabic_alphabet_6, R.drawable.arabic_animal_horse, "حصان"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_7, R.drawable.arabic_alphabet_7, R.drawable.arabic_animal_pig, "خنزير"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_8, R.drawable.arabic_alphabet_8, R.drawable.arabic_animal_hen, "ديك"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_9, R.drawable.arabic_alphabet_9, R.drawable.arabic_animal_wolf, "ذئب"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_10, R.drawable.arabic_alphabet_10, R.drawable.arabic_animal_racoon, "راكون"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_11, R.drawable.arabic_alphabet_11, R.drawable.arabic_animal_giraf, "زرافة"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_12, R.drawable.arabic_alphabet_12, R.drawable.arabic_animal_fish, "سمكة"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_13, R.drawable.arabic_alphabet_13, R.drawable.arabic_animal_monkey, "شمبانزى"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_14, R.drawable.arabic_alphabet_14, R.drawable.arabic_animal_falcon, "صقر"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_15, R.drawable.arabic_alphabet_15, R.drawable.arabic_animal_frog, "ضفدع"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_16, R.drawable.arabic_alphabet_16, R.drawable.arabic_animal_peacock, "طاووس"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_17, R.drawable.arabic_alphabet_17, R.drawable.arabic_animal_antelope, "ظبى"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_18, R.drawable.arabic_alphabet_18, R.drawable.arabic_animal_bird, "عصفور"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_19, R.drawable.arabic_alphabet_19, R.drawable.arabic_animal_crow, "غراب"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_20, R.drawable.arabic_alphabet_20, R.drawable.arabic_animal_elephant, "فيل"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_21, R.drawable.arabic_alphabet_21, R.drawable.arabic_animal_cat, "قطة"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_22, R.drawable.arabic_alphabet_22, R.drawable.arabic_animal_dog, "كلب"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_23, R.drawable.arabic_alphabet_23, R.drawable.arabic_animal_lama, "لاما"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_24, R.drawable.arabic_alphabet_24, R.drawable.arabic_animal_sheep, "ماعز"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_25, R.drawable.arabic_alphabet_25, R.drawable.arabic_animal_tiger, "نمر"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_26, R.drawable.arabic_alphabet_26, R.drawable.arabic_animal_hoopoe, "هدهد"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_27, R.drawable.arabic_alphabet_27, R.drawable.arabic_animal_rhino, "وحيد القرن"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_arabic_28, R.drawable.arabic_alphabet_28, R.drawable.arabic_animal_dragonfly, "يعسوب"));
 
-        DataAdapter dataAdapter = new DataAdapter(this, dataArrayList, this);
-        recyclerView.setAdapter(dataAdapter);
+        LettersAdapter lettersAdapter = new LettersAdapter(this, letterModelArrayList, this);
+        recyclerView.setAdapter(lettersAdapter);
     }
 
     @Override
     public void onItemClickListener(int position) {
         releaseMedia();
         mediaPlayer = MediaPlayer.create(ArabicLettersActivity.this,
-                dataArrayList.get(position).getRawID());
+                letterModelArrayList.get(position).getRawID());
         mediaPlayer.start();
         mediaPlayer.setOnCompletionListener(completionListener);
     }

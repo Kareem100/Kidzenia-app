@@ -15,7 +15,7 @@
         android:layout_width="@dimen/main_menu_width"
         android:layout_height="@dimen/main_menu_height"
         android:layout_gravity="center"
-        android:background="@drawable/transparent_background"
+        android:background="@drawable/transparent_bg_with_border"
         android:gravity="center"
         android:orientation="vertical">
 
