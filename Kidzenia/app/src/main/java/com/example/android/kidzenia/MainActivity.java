@@ -14,6 +14,8 @@ import android.widget.Spinner;
 import android.widget.VideoView;
 
 import com.bumptech.glide.Glide;
+import com.example.android.kidzenia.adapters.LanguageAdapter;
+import com.example.android.kidzenia.models.LanguageModel;
 
 import java.util.ArrayList;
 
@@ -21,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private VideoView video;
     private MediaPlayer mediaPlayer, music;
-    private ArrayList<LanguageItem> languageItems;
+    private ArrayList<LanguageModel> languageModels;
     private Spinner spinner;
     private Button englishLetters, arabicLetters, englishNumbers, arabicNumbers, songs;
     private boolean visibleSpinner;
@@ -86,26 +88,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initSpinner(){
-        languageItems = new ArrayList<>();
-        languageItems.add(new LanguageItem(getString(R.string.english), R.drawable.england_flag));
-        languageItems.add(new LanguageItem(getString(R.string.arabic), R.drawable.egypt_flag));
+        languageModels = new ArrayList<>();
+        languageModels.add(new LanguageModel(getString(R.string.english), R.drawable.england_flag));
+        languageModels.add(new LanguageModel(getString(R.string.arabic), R.drawable.egypt_flag));
 
-        LanguageAdapter adapter = new LanguageAdapter(this, languageItems);
+        LanguageAdapter adapter = new LanguageAdapter(this, languageModels);
         spinner.setAdapter(adapter);
         visibleSpinner = false;
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-                String lang = ((LanguageItem) parent.getItemAtPosition(pos)).getLanguage();
+                String lang = ((LanguageModel) parent.getItemAtPosition(pos)).getLanguage();
                 if (lang.equals("Arabic") || lang.equals("العربية")){
                     englishLetters.setText("الحروف الانجليزية");
                     englishNumbers.setText("الارقام الانجليزية");
                     arabicLetters.setText("الحروف العربية");
                     arabicNumbers.setText("الارقام العربية");
                     songs.setText("فديوهات");
-                    languageItems.get(0).setLanguage("الانجليزية");
-                    languageItems.get(1).setLanguage("العربية");
+                    languageModels.get(0).setLanguage("الانجليزية");
+                    languageModels.get(1).setLanguage("العربية");
                     currentLocale = CurrentLocale.ARABIC;
                 }
                 else {
@@ -114,8 +116,8 @@ public class MainActivity extends AppCompatActivity {
                     arabicLetters.setText(getString(R.string.arabic_letters));
                     arabicNumbers.setText(getString(R.string.arabic_numbers));
                     songs.setText(getString(R.string.music_videos));
-                    languageItems.get(0).setLanguage(getString(R.string.english));
-                    languageItems.get(1).setLanguage(getString(R.string.arabic));
+                    languageModels.get(0).setLanguage(getString(R.string.english));
+                    languageModels.get(1).setLanguage(getString(R.string.arabic));
                     currentLocale = CurrentLocale.ENGLISH;
                 }
             }

@@ -9,12 +9,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.android.kidzenia.adapters.LettersAdapter;
+import com.example.android.kidzenia.models.LetterModel;
+
 import java.util.ArrayList;
 
 public class EnglishNumbersActivity extends AppCompatActivity
-        implements DataAdapter.OnListItemClickListener {
+        implements LettersAdapter.OnListItemClickListener {
 
-    private ArrayList<Data> dataArrayList;
+    private ArrayList<LetterModel> letterModelArrayList;
     private MediaPlayer mediaPlayer, music;
     private ImageView background;
     private boolean backPressed;
@@ -62,27 +65,27 @@ public class EnglishNumbersActivity extends AppCompatActivity
             mediaPlayer.setOnCompletionListener(completionListener);
         }
 
-        dataArrayList = new ArrayList<>();
-        dataArrayList.add(new Data(R.raw.sound_1, R.drawable.number_1, R.drawable.apple_1, "One"));
-        dataArrayList.add(new Data(R.raw.sound_2, R.drawable.number_2, R.drawable.apples_2, "Two"));
-        dataArrayList.add(new Data(R.raw.sound_3, R.drawable.number_3, R.drawable.apples_3, "Three"));
-        dataArrayList.add(new Data(R.raw.sound_4, R.drawable.number_4, R.drawable.apples_4, "Four"));
-        dataArrayList.add(new Data(R.raw.sound_5, R.drawable.number_5, R.drawable.apples_5, "Five"));
-        dataArrayList.add(new Data(R.raw.sound_6, R.drawable.number_6, R.drawable.apples_6, "Six"));
-        dataArrayList.add(new Data(R.raw.sound_7, R.drawable.number_7, R.drawable.apples_7, "Seven"));
-        dataArrayList.add(new Data(R.raw.sound_8, R.drawable.number_8, R.drawable.apples_8, "Eight"));
-        dataArrayList.add(new Data(R.raw.sound_9, R.drawable.number_9, R.drawable.apples_9, "Nine"));
-        dataArrayList.add(new Data(R.raw.sound_10, R.drawable.number_10, R.drawable.apples_10, "Ten"));
+        letterModelArrayList = new ArrayList<>();
+        letterModelArrayList.add(new LetterModel(R.raw.sound_1, R.drawable.number_1, R.drawable.apple_1, "One"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_2, R.drawable.number_2, R.drawable.apples_2, "Two"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_3, R.drawable.number_3, R.drawable.apples_3, "Three"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_4, R.drawable.number_4, R.drawable.apples_4, "Four"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_5, R.drawable.number_5, R.drawable.apples_5, "Five"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_6, R.drawable.number_6, R.drawable.apples_6, "Six"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_7, R.drawable.number_7, R.drawable.apples_7, "Seven"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_8, R.drawable.number_8, R.drawable.apples_8, "Eight"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_9, R.drawable.number_9, R.drawable.apples_9, "Nine"));
+        letterModelArrayList.add(new LetterModel(R.raw.sound_10, R.drawable.number_10, R.drawable.apples_10, "Ten"));
 
-        DataAdapter dataAdapter = new DataAdapter(this, dataArrayList, this);
-        recyclerView.setAdapter(dataAdapter);
+        LettersAdapter lettersAdapter = new LettersAdapter(this, letterModelArrayList, this);
+        recyclerView.setAdapter(lettersAdapter);
     }
 
     @Override
     public void onItemClickListener(int position) {
         releaseMedia();
         mediaPlayer = MediaPlayer.create(EnglishNumbersActivity.this,
-                dataArrayList.get(position).getRawID());
+                letterModelArrayList.get(position).getRawID());
         mediaPlayer.start();
         mediaPlayer.setOnCompletionListener(completionListener);
     }

@@ -1,13 +1,13 @@
-package com.example.android.kidzenia;
+package com.example.android.kidzenia.models;
 
-public class Data {
+public class LetterModel {
 
     private final int letterNumberID;
     private final int animalAppleID;
     private final int rawID;
     private final String name;
 
-    public Data(int rawID, int letterNumberID, int animalAppleID, String name) {
+    public LetterModel(int rawID, int letterNumberID, int animalAppleID, String name) {
         this.letterNumberID = letterNumberID;
         this.animalAppleID = animalAppleID;
         this.name = name;

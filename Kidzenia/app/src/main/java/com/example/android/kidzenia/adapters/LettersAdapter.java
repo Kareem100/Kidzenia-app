@@ -1,4 +1,4 @@
-package com.example.android.kidzenia;
+package com.example.android.kidzenia.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,26 +11,28 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.android.kidzenia.models.LetterModel;
+import com.example.android.kidzenia.R;
 
 import java.util.ArrayList;
 
-public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder> {
+public class LettersAdapter extends RecyclerView.Adapter<LettersAdapter.DataViewHolder> {
 
     private final Context context;
-    private final ArrayList<Data> dataArrayList;
+    private final ArrayList<LetterModel> letterModelArrayList;
     private final OnListItemClickListener onListItemClickListener;
 
-    public DataAdapter(Context context, ArrayList<Data> dataArrayList,
-                       OnListItemClickListener onListItemClickListener) {
+    public LettersAdapter(Context context, ArrayList<LetterModel> letterModelArrayList,
+                          OnListItemClickListener onListItemClickListener) {
         this.context = context;
-        this.dataArrayList = dataArrayList;
+        this.letterModelArrayList = letterModelArrayList;
         this.onListItemClickListener = onListItemClickListener;
     }
 
     @NonNull
     @Override
     public DataViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(context).inflate(R.layout.list_item,
+        View itemView = LayoutInflater.from(context).inflate(R.layout.letters_numbers_list_item,
                 parent, false);
 
         return new DataViewHolder(itemView, onListItemClickListener);
@@ -38,14 +40,14 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull DataViewHolder holder, int position) {
-        Data dataItem = dataArrayList.get(position);
-        holder.bind(context, dataItem.getLetterNumberID(),
-                dataItem.getAnimalAppleID(), dataItem.getName());
+        LetterModel letterModelItem = letterModelArrayList.get(position);
+        holder.bind(context, letterModelItem.getLetterNumberID(),
+                letterModelItem.getAnimalAppleID(), letterModelItem.getName());
     }
 
     @Override
     public int getItemCount() {
-        return dataArrayList.size();
+        return letterModelArrayList.size();
     }
 
     public static class DataViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
