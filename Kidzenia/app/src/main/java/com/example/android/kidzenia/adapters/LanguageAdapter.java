@@ -35,7 +35,7 @@ public class LanguageAdapter extends ArrayAdapter<LanguageModel> {
 
     private View initView(int position, View convertView, ViewGroup parent) {
         if (convertView == null)
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.spinner_layout, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.layout_spinner, parent, false);
 
         ImageView flag = convertView.findViewById(R.id.spinner_image_flag);
         TextView lang = convertView.findViewById(R.id.spinner_language);
