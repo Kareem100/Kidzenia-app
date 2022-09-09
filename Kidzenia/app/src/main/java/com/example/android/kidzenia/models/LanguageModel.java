@@ -1,11 +1,11 @@
-package com.example.android.kidzenia;
+package com.example.android.kidzenia.models;
 
-public class LanguageItem {
+public class LanguageModel {
 
     private String language;
     private final int countryFlag;
 
-    public LanguageItem(String language, int countryFlag) {
+    public LanguageModel(String language, int countryFlag) {
         this.language = language;
         this.countryFlag = countryFlag;
     }
