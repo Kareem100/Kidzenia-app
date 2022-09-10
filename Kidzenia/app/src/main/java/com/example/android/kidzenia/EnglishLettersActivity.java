@@ -99,10 +99,12 @@ public class EnglishLettersActivity extends AppCompatActivity
 
     @Override
     public void onItemClickListener(int position) {
-        releaseMedia();
-        mediaPlayer = MediaPlayer.create(this, letterModelArrayList.get(position).getRawID());
-        mediaPlayer.start();
-        mediaPlayer.setOnCompletionListener(completionListener);
+        if (playMusic) {
+            releaseMedia();
+            mediaPlayer = MediaPlayer.create(this, letterModelArrayList.get(position).getRawID());
+            mediaPlayer.start();
+            mediaPlayer.setOnCompletionListener(completionListener);
+        }
     }
 
     private void releaseMedia() {

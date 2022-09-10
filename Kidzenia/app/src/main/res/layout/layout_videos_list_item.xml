@@ -35,7 +35,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:layout_margin="@dimen/medium_spacing"
+                android:layout_marginStart="@dimen/medium_spacing"
+                android:layout_marginTop="@dimen/medium_spacing"
+                android:layout_marginEnd="@dimen/medium_spacing"
+                android:layout_marginBottom="@dimen/medium_spacing"
                 android:src="@drawable/ic_play_24"
                 tools:ignore="ContentDescription" />
 
