@@ -20,14 +20,6 @@
         tools:src="@drawable/back_to_school_anim" />
 
     <ImageView
-        android:id="@+id/splash_background_1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:src="@drawable/splash_background_1"
-        tools:ignore="ContentDescription" />
-
-    <ImageView
         android:id="@+id/splash_logo"
         android:layout_width="@dimen/large_gif_dimensions"
         android:layout_height="@dimen/large_gif_dimensions"

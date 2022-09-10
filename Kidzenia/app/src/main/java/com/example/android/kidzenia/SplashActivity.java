@@ -16,38 +16,34 @@ import com.bumptech.glide.Glide;
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
 
-    private ImageView background, animationImg, logo;
+    private ImageView animationImg, logo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splach);
 
-        background = findViewById(R.id.splash_background_1);
         animationImg = findViewById(R.id.splash_hello_animation);
         logo = findViewById(R.id.splash_logo);
 
         Glide.with(this).asGif().load(R.drawable.back_to_school_anim).into(animationImg);
 
-        background.setAlpha(0f);
         animationImg.setAlpha(0f);
         logo.setAlpha(0f);
 
-        background.animate().alpha(1f).setDuration(2000).setStartDelay(4000);
         animationImg.animate().alpha(1f).setDuration(1000);
 
         new Handler().postDelayed(() -> {
-            background.animate().translationY(-2500).alpha(0f).setDuration(2000).setStartDelay(2000);
-            logo.animate().alpha(1f).setDuration(2000).setStartDelay(3000);
-            animationImg.setAlpha(0f);
-        }, 6000);
+            animationImg.animate().alpha(0f).setDuration(2000);
+            logo.animate().alpha(1f).setDuration(2000);
+        }, 4000);
 
         new Handler().postDelayed(() -> {
             Pair<View, String> pairs = new Pair<>(logo, "logo_image");
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SplashActivity.this, pairs);
             startActivity(new Intent(SplashActivity.this, MainActivity.class), options.toBundle());
             finish();
-        }, 13000);
+        }, 6000);
 
     }
 }
