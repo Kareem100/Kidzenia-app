@@ -22,4 +22,5 @@
     <dimen name="xlarge_spacing">18dp</dimen>
     <dimen name="card_corner_radius">18dp</dimen>
     <dimen name="card_elevation">12dp</dimen>
+    <dimen name="status_bar_height">32dp</dimen>
 </resources>

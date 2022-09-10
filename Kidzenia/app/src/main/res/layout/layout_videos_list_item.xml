@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/transparent_bg_with_border">
+            android:background="@drawable/transparent_bg_noborder">
 
             <ImageView
                 android:id="@+id/video_play_icon"

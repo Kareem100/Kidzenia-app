@@ -3,22 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/drawable/button_style.xml" value="0.1215" />
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/drawable/green_gradient_background.xml" value="0.1215" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1265" />
-        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/drawable/transparent_background.xml" value="0.1215" />
-        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/drawable/transparent_background_v2.xml" value="0.1215" />
-        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/drawable/transparent_bg_noborder.xml" value="0.1215" />
-        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/drawable/transparent_bg_with_border.xml" value="0.1215" />
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/drawable/text_border.xml" value="0.1215" />
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/drawable/text_highlight.xml" value="0.1215" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/activity_display_data.xml" value="0.19166666666666668" />
-        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/activity_splach.xml" value="0.1" />
-        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/activity_videos.xml" value="0.1824074074074074" />
-        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/activity_videos2.xml" value="0.20416666666666666" />
-        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/layout_letters_list_item.xml" value="0.1824074074074074" />
-        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/layout_videos_list_item.xml" value="0.25" />
-        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/letters_numbers_list_item.xml" value="0.1824074074074074" />
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/activity_main.xml" value="1.0" />
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/activity_splach.xml" value="0.18" />
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/activity_videos.xml" value="0.153125" />
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/layout_videos_list_item.xml" value="0.1824074074074074" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/list_item.xml" value="0.20416666666666666" />
-        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/spinner_layout.xml" value="0.20416666666666666" />
-        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/videos_list_item.xml" value="0.1824074074074074" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1265" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1265" />
       </map>
