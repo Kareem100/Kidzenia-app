@@ -1,8 +1,20 @@
 <resources>
 
-    <!-- Base application theme. -->
+    <!-- Base application theme. --> <!-- No Action Bar Theme. -->
+    <style name="Theme.Kidzenia" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- App Theme Colors -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="android:textColor">@color/colorSecondary</item>
 
-    <!-- No Action Bar Theme. -->
+        <!-- Status bar color. -->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+
+        <!-- Theme customization here. -->
+        <item name="android:fontFamily">@font/comicz</item>
+        <!-- <item name="android:background">@drawable/green_gradient_background</item> -->
+    </style>
 
     <!-- Text Style -->
     <style name="textStyle">

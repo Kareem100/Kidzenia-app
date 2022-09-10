@@ -91,7 +91,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/large_spacing"
             android:background="@drawable/text_border"
-            android:text="@string/music_videos" />
+            android:text="@string/music_videos"
+            android:textColor="#FFF" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -103,8 +104,8 @@
                 android:id="@+id/animals_anim_gif"
                 android:layout_width="@dimen/img_dimensions"
                 android:layout_height="@dimen/img_dimensions"
-                tools:src="@drawable/animals_anim"
-                tools:ignore="ContentDescription" />
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/animals_anim" />
 
             <ImageView
                 android:id="@+id/bus_anim_gif"

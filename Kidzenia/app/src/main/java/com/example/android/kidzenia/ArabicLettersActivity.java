@@ -26,7 +26,6 @@ public class ArabicLettersActivity extends AppCompatActivity
     private final MediaPlayer.OnCompletionListener completionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
-            Log.d("TAG", "onCompletion: REACHED !!!");
             releaseMedia();
             if (background.getDrawable() != null) {
                 background.animate().alpha(0).setDuration(1000);
@@ -103,11 +102,12 @@ public class ArabicLettersActivity extends AppCompatActivity
 
     @Override
     public void onItemClickListener(int position) {
-        releaseMedia();
-        mediaPlayer = MediaPlayer.create(ArabicLettersActivity.this,
-                letterModelArrayList.get(position).getRawID());
-        mediaPlayer.start();
-        mediaPlayer.setOnCompletionListener(completionListener);
+        if (playMusic) {
+            releaseMedia();
+            mediaPlayer = MediaPlayer.create(this, letterModelArrayList.get(position).getRawID());
+            mediaPlayer.start();
+            mediaPlayer.setOnCompletionListener(completionListener);
+        }
     }
 
     private void releaseMedia() {

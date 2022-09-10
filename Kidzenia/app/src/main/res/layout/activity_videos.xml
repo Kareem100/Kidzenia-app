@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/green_gradient_background"
+    android:paddingTop="@dimen/status_bar_height"
     tools:context=".VideosActivity">
 
     <androidx.recyclerview.widget.RecyclerView
