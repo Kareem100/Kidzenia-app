@@ -83,11 +83,12 @@ public class ArabicNumbersActivity extends AppCompatActivity
 
     @Override
     public void onItemClickListener(int position) {
-        releaseMedia();
-        mediaPlayer = MediaPlayer.create(ArabicNumbersActivity.this,
-                letterModelArrayList.get(position).getRawID());
-        mediaPlayer.start();
-        mediaPlayer.setOnCompletionListener(completionListener);
+        if (playMusic) {
+            releaseMedia();
+            mediaPlayer = MediaPlayer.create(this, letterModelArrayList.get(position).getRawID());
+            mediaPlayer.start();
+            mediaPlayer.setOnCompletionListener(completionListener);
+        }
     }
 
     private void releaseMedia() {

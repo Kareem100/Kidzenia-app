@@ -56,13 +56,14 @@
         <ImageView
             android:layout_width="@dimen/img_dimensions"
             android:layout_height="@dimen/img_dimensions"
-            tools:ignore="ContentDescription"
-            tools:src="@drawable/play_button_anim" />
+            android:scaleType="center"
+            android:src="@drawable/sound_icon_32"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/pronounce_text"
             style="@style/textStyle"
-            android:layout_width="100dp"
+            android:layout_width="@dimen/img_dimensions"
             android:layout_height="wrap_content"
             android:background="@drawable/text_border"
             android:text="@string/pronounce"
