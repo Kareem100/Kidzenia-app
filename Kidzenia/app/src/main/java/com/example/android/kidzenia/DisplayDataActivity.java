@@ -35,7 +35,7 @@ public class DisplayDataActivity extends AppCompatActivity
                         playMusic = true;
                         background.setImageDrawable(null);
                     }
-                }, 1000);
+                }, 1200);
             }
         }
     };
@@ -47,6 +47,7 @@ public class DisplayDataActivity extends AppCompatActivity
         music = MediaPlayer.create(this, R.raw.looped_music);
         music.setLooping(true);
         backPressed = false;
+        VISIBLE_BACKGROUND = false; // this line cancels the effect of the static field, but for more good user experience it will be kept
 
         background = findViewById(R.id.display_data_background);
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
@@ -212,6 +213,7 @@ public class DisplayDataActivity extends AppCompatActivity
         music.release();
         music = null;
     }
+
     /****************  END HELPERS ********************/
 
     @Override
