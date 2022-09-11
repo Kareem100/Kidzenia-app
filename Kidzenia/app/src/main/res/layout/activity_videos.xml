@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/green_gradient_background"
     android:paddingTop="@dimen/status_bar_height"
-    tools:context=".VideosActivity">
+    tools:context=".activities.VideosActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/videos_recycler_view"

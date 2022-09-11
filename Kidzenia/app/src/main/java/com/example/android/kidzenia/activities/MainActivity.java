@@ -1,4 +1,4 @@
-package com.example.android.kidzenia;
+package com.example.android.kidzenia.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.VideoView;
 
 import com.bumptech.glide.Glide;
+import com.example.android.kidzenia.R;
 import com.example.android.kidzenia.adapters.LanguageAdapter;
 import com.example.android.kidzenia.models.LanguageModel;
 

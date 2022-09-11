@@ -1,4 +1,4 @@
-package com.example.android.kidzenia;
+package com.example.android.kidzenia.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.android.kidzenia.R;
 import com.example.android.kidzenia.adapters.VideosAdapter;
 import com.example.android.kidzenia.models.VideoModel;
 
