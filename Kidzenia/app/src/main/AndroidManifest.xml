@@ -12,17 +12,13 @@
         <activity
             android:name=".VideosActivity"
             android:exported="false" />
-        <activity android:name=".ArabicNumbersActivity" />
-        <activity android:name=".ArabicLettersActivity" />
-        <activity android:name=".EnglishNumbersActivity" />
-        <activity android:name=".EnglishLettersActivity" />
+        <activity android:name=".DisplayDataActivity" />
         <activity android:name=".MainActivity" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
