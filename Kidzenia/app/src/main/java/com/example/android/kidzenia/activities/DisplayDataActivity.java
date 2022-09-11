@@ -1,4 +1,4 @@
-package com.example.android.kidzenia;
+package com.example.android.kidzenia.activities;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.android.kidzenia.R;
 import com.example.android.kidzenia.adapters.LettersAdapter;
 import com.example.android.kidzenia.models.LetterModel;
 
