@@ -74,10 +74,10 @@ public class MainActivity extends AppCompatActivity {
                 visibleSpinner = false;
             }
         });
-        englishLetters.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, EnglishLettersActivity.class)));
-        englishNumbers.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, EnglishNumbersActivity.class)));
-        arabicLetters.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, ArabicLettersActivity.class)));
-        arabicNumbers.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, ArabicNumbersActivity.class)));
+        englishLetters.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, DisplayDataActivity.class).putExtra("dataType", "englishLetters")));
+        englishNumbers.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, DisplayDataActivity.class).putExtra("dataType", "englishNumbers")));
+        arabicLetters.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, DisplayDataActivity.class).putExtra("dataType", "arabicLetters")));
+        arabicNumbers.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, DisplayDataActivity.class).putExtra("dataType", "arabicNumbers")));
         songs.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, VideosActivity.class)));
 
         video.setOnPreparedListener(media -> {
