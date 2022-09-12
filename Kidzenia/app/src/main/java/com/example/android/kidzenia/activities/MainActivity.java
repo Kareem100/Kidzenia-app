@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                     englishNumbers.setText("الارقام الانجليزية");
                     arabicLetters.setText("الحروف العربية");
                     arabicNumbers.setText("الارقام العربية");
-                    songs.setText("فديوهات");
+                    songs.setText("فديوهات تعليمية");
                     languageModels.get(0).setLanguage("الانجليزية");
                     languageModels.get(1).setLanguage("العربية");
                     currentLocale = CurrentLocale.ARABIC;
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                     englishNumbers.setText(getString(R.string.english_numbers));
                     arabicLetters.setText(getString(R.string.arabic_letters));
                     arabicNumbers.setText(getString(R.string.arabic_numbers));
-                    songs.setText(getString(R.string.music_videos));
+                    songs.setText(getString(R.string.educational_videos));
                     languageModels.get(0).setLanguage(getString(R.string.english));
                     languageModels.get(1).setLanguage(getString(R.string.arabic));
                     currentLocale = CurrentLocale.ENGLISH;
