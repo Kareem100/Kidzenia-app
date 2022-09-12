@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.android.kidzenia.MainActivity;
+import com.example.android.kidzenia.activities.MainActivity;
 import com.example.android.kidzenia.models.LetterModel;
 import com.example.android.kidzenia.R;
 
