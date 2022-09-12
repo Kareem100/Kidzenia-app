@@ -91,7 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/large_spacing"
             android:background="@drawable/text_border"
-            android:text="@string/music_videos"
+            android:text="@string/educational_videos"
             android:textColor="#FFF" />
 
         <LinearLayout
