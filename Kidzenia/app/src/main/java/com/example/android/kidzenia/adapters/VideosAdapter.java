@@ -40,7 +40,7 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.VideosView
     @Override
     public void onBindViewHolder(@NonNull VideosViewHolder holder, int position) {
         VideoModel videoModel = videoModelArrayList.get(position);
-        holder.bind(videoModel.getPath(), videoModel.getName());
+        holder.bind(videoModel.getPath(), videoModel.getTitle());
     }
 
     @Override
