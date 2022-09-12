@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -54,6 +55,9 @@ public class VideosActivity extends AppCompatActivity implements VideosAdapter.O
 
     @Override
     public void onVideoClick(int position) {
-        Toast.makeText(this, videoModelArrayList.get(position).getName(), Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(VideosActivity.this, VideoPlayerActivity.class);
+        i.putExtra("video_title", videoModelArrayList.get(position).getTitle());
+        i.putExtra("video_path", videoModelArrayList.get(position).getPath().toString());
+        startActivity(i);
     }
 }

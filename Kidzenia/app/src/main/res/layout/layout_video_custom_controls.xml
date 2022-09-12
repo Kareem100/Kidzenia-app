@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/video_custom_controls_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:paddingTop="@dimen/status_bar_height"
+    tools:background="#000">
+
+    <TextView
+        android:id="@+id/player_video_title_text"
+        style="@style/textStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/xlarge_spacing"
+        android:layout_marginTop="@dimen/xlarge_spacing"
+        android:layout_marginEnd="@dimen/xlarge_spacing"
+        android:layout_marginBottom="@dimen/xlarge_spacing"
+        android:textColor="#FFF"
+        tools:text="Video Title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <ImageButton
+            android:id="@+id/player_replay_button"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/img_dimensions"
+            android:layout_margin="@dimen/medium_spacing"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_replay_10s_32"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/player_play_pause_button"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/img_dimensions"
+            android:layout_margin="@dimen/medium_spacing"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_pause_36"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/player_forward_button"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/img_dimensions"
+            android:layout_margin="@dimen/medium_spacing"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_forward_10s_32"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/status_bar_height"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/medium_spacing">
+
+        <SeekBar
+            android:id="@+id/player_seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/small_spacing"
+            android:progressBackgroundTint="#FFF"
+            android:progressTint="@color/colorPrimary"
+            android:thumb="@drawable/seekbar_thumb" />
+
+        <TextView
+            android:id="@+id/player_video_time"
+            style="@style/textStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            android:textSize="@dimen/small_text_size"
+            tools:text="Time" />
+    </LinearLayout>
+
+</RelativeLayout>
