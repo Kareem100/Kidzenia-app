@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.android.kidzenia.R;
+import com.example.android.kidzenia.activities.MainActivity;
 import com.example.android.kidzenia.models.VideoModel;
 
 import java.util.ArrayList;
@@ -40,7 +41,9 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.VideosView
     @Override
     public void onBindViewHolder(@NonNull VideosViewHolder holder, int position) {
         VideoModel videoModel = videoModelArrayList.get(position);
-        holder.bind(videoModel.getPath(), videoModel.getTitle());
+        String title = (MainActivity.currentLocale == MainActivity.CurrentLocale.ARABIC) ?
+                videoModel.getArabic_title() : videoModel.getTitle();
+        holder.bind(videoModel.getPath(), title);
     }
 
     @Override
@@ -48,7 +51,7 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.VideosView
         return videoModelArrayList.size();
     }
 
-    public class VideosViewHolder extends RecyclerView.ViewHolder{
+    public class VideosViewHolder extends RecyclerView.ViewHolder {
         private final ImageView thumbnailImageView;
         private final TextView nameTextView;
 
