@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">كيدزينيا</string>
-    <string name="english_alphabet_song_1">اغنية الحروف الابجدية الانجليزية #1</string>
-    <string name="english_numbers_song_1">اغنية الارقام الانجليزية #1</string>
-    <string name="arabic_alphabet_song_1">اغنية الحروف الابجدية العربية #1</string>
-    <string name="arabic_numbers_song_1">اغنية الارقام العربية #1</string>
     <string name="english_letters">الحروف الانجليزية</string>
     <string name="english_numbers">الارقام الانجليزية</string>
     <string name="arabic_letters">الحروف العربية</string>
