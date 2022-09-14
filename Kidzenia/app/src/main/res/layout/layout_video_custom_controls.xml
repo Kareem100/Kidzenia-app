@@ -14,10 +14,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="@dimen/xlarge_spacing"
-        android:layout_marginTop="@dimen/xlarge_spacing"
-        android:layout_marginEnd="@dimen/xlarge_spacing"
-        android:layout_marginBottom="@dimen/xlarge_spacing"
+        android:layout_marginStart="@dimen/spacing_xlarge"
+        android:layout_marginTop="@dimen/spacing_xlarge"
+        android:layout_marginEnd="@dimen/spacing_xlarge"
+        android:layout_marginBottom="@dimen/spacing_xlarge"
         android:textColor="#FFF"
         tools:text="Video Title" />
 
@@ -32,7 +32,7 @@
             android:id="@+id/player_replay_button"
             android:layout_width="0dp"
             android:layout_height="@dimen/img_dimensions"
-            android:layout_margin="@dimen/medium_spacing"
+            android:layout_margin="@dimen/spacing_medium"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_replay_10s_32"
@@ -42,7 +42,7 @@
             android:id="@+id/player_play_pause_button"
             android:layout_width="0dp"
             android:layout_height="@dimen/img_dimensions"
-            android:layout_margin="@dimen/medium_spacing"
+            android:layout_margin="@dimen/spacing_medium"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_pause_36"
@@ -52,7 +52,7 @@
             android:id="@+id/player_forward_button"
             android:layout_width="0dp"
             android:layout_height="@dimen/img_dimensions"
-            android:layout_margin="@dimen/medium_spacing"
+            android:layout_margin="@dimen/spacing_medium"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_forward_10s_32"
@@ -66,14 +66,14 @@
         android:layout_marginBottom="@dimen/status_bar_height"
         android:gravity="center"
         android:orientation="horizontal"
-        android:padding="@dimen/medium_spacing">
+        android:padding="@dimen/spacing_medium">
 
         <SeekBar
             android:id="@+id/player_seekbar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:padding="@dimen/small_spacing"
+            android:padding="@dimen/spacing_small"
             android:progressBackgroundTint="#FFF"
             android:progressTint="@color/colorPrimary"
             android:thumb="@drawable/seekbar_thumb" />

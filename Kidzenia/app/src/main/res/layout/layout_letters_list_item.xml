@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/letters_list_item_height"
-    android:layout_margin="@dimen/small_spacing"
+    android:layout_margin="@dimen/spacing_small"
     android:background="@drawable/transparent_bg_with_border"
     android:clickable="true"
     android:focusable="true"

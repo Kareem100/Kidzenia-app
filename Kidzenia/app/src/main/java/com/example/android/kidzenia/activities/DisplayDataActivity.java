@@ -47,6 +47,8 @@ public class DisplayDataActivity extends AppCompatActivity
 
         music = MediaPlayer.create(this, R.raw.looped_music);
         music.setLooping(true);
+        if (!MainActivity.isSoundsOn) music.setVolume(0f, 0f);
+
         backPressed = false;
         VISIBLE_BACKGROUND = false; // this line cancels the effect of the static field, but for more good user experience it will be kept
 
