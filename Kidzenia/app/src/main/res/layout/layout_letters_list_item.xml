@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/text_highlight"
             android:textColor="@color/colorPrimary"
-            android:textSize="22sp"
+            android:textSize="18sp"
             tools:text="TEST 1" />
     </LinearLayout>
 
@@ -68,7 +68,7 @@
             android:background="@drawable/text_border"
             android:text="@string/pronounce"
             android:textColor="@color/colorTertiary"
-            android:textSize="16sp" />
+            android:textSize="@dimen/text_size_default" />
     </LinearLayout>
 
 </LinearLayout>

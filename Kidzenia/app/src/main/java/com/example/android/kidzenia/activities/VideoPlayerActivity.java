@@ -49,10 +49,10 @@ public class VideoPlayerActivity extends AppCompatActivity {
             videoView.start();
         });
 
-        ((ImageButton) findViewById(R.id.player_replay_button))
+        findViewById(R.id.player_replay_button)
                 .setOnClickListener(view -> videoView.seekTo(videoView.getCurrentPosition() - _10SEC));
 
-        ((ImageButton) findViewById(R.id.player_forward_button))
+        findViewById(R.id.player_forward_button)
                 .setOnClickListener(view -> videoView.seekTo(videoView.getCurrentPosition() + _10SEC));
 
         playPauseButton.setOnClickListener(view -> {
