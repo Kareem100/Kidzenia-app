@@ -1,7 +1,9 @@
 package com.example.android.kidzenia.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -22,12 +24,13 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private VideoView video;
+    private VideoView videoView;
     private MediaPlayer mediaPlayer, music;
     private ArrayList<LanguageModel> languageModels;
     private Spinner spinner;
-    private Button englishLetters, arabicLetters, englishNumbers, arabicNumbers, songs;
+    private Button englishLettersBtn, arabicLettersBtn, englishNumbersBtn, arabicNumbersBtn, videosBtn;
     private boolean visibleSpinner;
+    public static Boolean isSoundsOn = false;
     public static CurrentLocale currentLocale = CurrentLocale.ENGLISH;
 
     public enum CurrentLocale {
@@ -39,14 +42,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        video = findViewById(R.id.main_video);
+        videoView = findViewById(R.id.main_video);
         spinner = findViewById(R.id.main_spinner);
-        englishLetters = findViewById(R.id.main_english_letters_btn);
-        englishNumbers = findViewById(R.id.main_english_numbers_btn);
-        arabicLetters = findViewById(R.id.main_arabic_letters_btn);
-        arabicNumbers = findViewById(R.id.main_arabic_numbers_btn);
-        songs = findViewById(R.id.main_songs_btn);
+        englishLettersBtn = findViewById(R.id.main_english_letters_btn);
+        englishNumbersBtn = findViewById(R.id.main_english_numbers_btn);
+        arabicLettersBtn = findViewById(R.id.main_arabic_letters_btn);
+        arabicNumbersBtn = findViewById(R.id.main_arabic_numbers_btn);
+        videosBtn = findViewById(R.id.main_songs_btn);
         ImageView languageIcon = findViewById(R.id.main_lang_icon);
+        ImageView soundsIcon = findViewById(R.id.main_sounds_icon);
         ImageView animalsAnimGif = findViewById(R.id.animals_anim_gif);
         ImageView busAnimGif = findViewById(R.id.bus_anim_gif);
 
@@ -59,36 +63,49 @@ public class MainActivity extends AppCompatActivity {
         music.setLooping(true);
         music.start();
 
-        Uri uri = Uri.parse("android.resource://"+ getPackageName() + "/" + R.raw.background_video);
-        video.setVideoURI(uri);
-        video.start();
-        songs.animate().scaleX(0.8f).setDuration(3000);
+        handleMusicSound(soundsIcon);
 
-        languageIcon.setOnClickListener(view -> {
-            if(!visibleSpinner){
-                spinner.setVisibility(View.VISIBLE);
-                visibleSpinner = true;
-            }
-
-            else {
-                spinner.setVisibility(View.GONE);
-                visibleSpinner = false;
-            }
-        });
-        englishLetters.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, DisplayDataActivity.class).putExtra("dataType", "englishLetters")));
-        englishNumbers.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, DisplayDataActivity.class).putExtra("dataType", "englishNumbers")));
-        arabicLetters.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, DisplayDataActivity.class).putExtra("dataType", "arabicLetters")));
-        arabicNumbers.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, DisplayDataActivity.class).putExtra("dataType", "arabicNumbers")));
-        songs.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, VideosActivity.class)));
-
-        video.setOnPreparedListener(media -> {
+        Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.background_video);
+        videoView.setVideoURI(uri);
+        videoView.setOnPreparedListener(media -> {
             releaseVideo();
             mediaPlayer = media;
             mediaPlayer.setLooping(true);
         });
+
+        languageIcon.setOnClickListener(view -> {
+            if (!visibleSpinner) {
+                spinner.setVisibility(View.VISIBLE);
+                visibleSpinner = true;
+            } else {
+                spinner.setVisibility(View.GONE);
+                visibleSpinner = false;
+            }
+        });
+
+        soundsIcon.setOnClickListener(view -> handleMusicSound(soundsIcon));
+
+        englishLettersBtn.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, DisplayDataActivity.class).putExtra("dataType", "englishLetters")));
+        englishNumbersBtn.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, DisplayDataActivity.class).putExtra("dataType", "englishNumbers")));
+        arabicLettersBtn.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, DisplayDataActivity.class).putExtra("dataType", "arabicLetters")));
+        arabicNumbersBtn.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, DisplayDataActivity.class).putExtra("dataType", "arabicNumbers")));
+        videosBtn.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, VideosActivity.class)));
+        videosBtn.animate().scaleX(0.8f).setDuration(3000);
     }
 
-    private void initSpinner(){
+    private void handleMusicSound(ImageView soundsIcon) {
+        if (isSoundsOn) {
+            music.setVolume(0f, 0f);
+            soundsIcon.setImageDrawable(AppCompatResources.getDrawable(this, R.drawable.ic_volume_off_24));
+            isSoundsOn = false;
+        } else {
+            music.setVolume(1f, 1f);
+            soundsIcon.setImageDrawable(AppCompatResources.getDrawable(this, R.drawable.ic_volume_on_24));
+            isSoundsOn = true;
+        }
+    }
+
+    private void initSpinner() {
         languageModels = new ArrayList<>();
         languageModels.add(new LanguageModel(getString(R.string.english), R.drawable.england_flag));
         languageModels.add(new LanguageModel(getString(R.string.arabic), R.drawable.egypt_flag));
@@ -98,44 +115,45 @@ public class MainActivity extends AppCompatActivity {
         visibleSpinner = false;
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                 String lang = ((LanguageModel) parent.getItemAtPosition(pos)).getLanguage();
-                if (lang.equals("Arabic") || lang.equals("العربية")){
-                    englishLetters.setText("الحروف الانجليزية");
-                    englishNumbers.setText("الارقام الانجليزية");
-                    arabicLetters.setText("الحروف العربية");
-                    arabicNumbers.setText("الارقام العربية");
-                    songs.setText("فديوهات تعليمية");
+                if (lang.equals("Arabic") || lang.equals("العربية")) {
+                    englishLettersBtn.setText("الحروف الانجليزية");
+                    englishNumbersBtn.setText("الارقام الانجليزية");
+                    arabicLettersBtn.setText("الحروف العربية");
+                    arabicNumbersBtn.setText("الارقام العربية");
+                    videosBtn.setText("فــــــــديــــــــــــوهــــــــات تــعـلـيـمــيـة");
                     languageModels.get(0).setLanguage("الانجليزية");
                     languageModels.get(1).setLanguage("العربية");
                     currentLocale = CurrentLocale.ARABIC;
-                }
-                else {
-                    englishLetters.setText(getString(R.string.english_letters));
-                    englishNumbers.setText(getString(R.string.english_numbers));
-                    arabicLetters.setText(getString(R.string.arabic_letters));
-                    arabicNumbers.setText(getString(R.string.arabic_numbers));
-                    songs.setText(getString(R.string.educational_videos));
-                    languageModels.get(0).setLanguage(getString(R.string.english));
-                    languageModels.get(1).setLanguage(getString(R.string.arabic));
+                } else {
+                    englishLettersBtn.setText("ENGLISH LETTERS");
+                    englishNumbersBtn.setText("ENGLISH NUMBERS");
+                    arabicLettersBtn.setText("ARABIC LETTERS");
+                    arabicNumbersBtn.setText("ARABIC NUMBERS");
+                    videosBtn.setText("EDUCATIONAL VIDEOS");
+                    languageModels.get(0).setLanguage("English");
+                    languageModels.get(1).setLanguage("Arabic");
                     currentLocale = CurrentLocale.ENGLISH;
                 }
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) { }
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
         });
     }
 
-    private void releaseVideo(){
+    private void releaseVideo() {
         if (mediaPlayer != null) {
             mediaPlayer.release();
             mediaPlayer = null;
         }
     }
 
-    private void releaseMusic(){
+    private void releaseMusic() {
         if (music != null) {
             music.release();
             music = null;
@@ -145,15 +163,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        video.pause();
+        videoView.pause();
         music.pause();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-       // EnglishLettersActivity.VISIBLE_BACKGROUND=false;
-        video.start();
+        // EnglishLettersActivity.VISIBLE_BACKGROUND=false;
+        videoView.start();
         music.start();
     }
 

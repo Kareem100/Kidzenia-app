@@ -8,7 +8,7 @@
         android:id="@+id/spinner_image_flag"
         android:layout_width="@dimen/spinner_view_dimensions"
         android:layout_height="@dimen/spinner_view_dimensions"
-        android:layout_marginStart="@dimen/small_spacing"
+        android:layout_marginStart="@dimen/spacing_small"
         android:src="@drawable/england_flag"
         tools:ignore="ContentDescription" />
 
@@ -17,7 +17,6 @@
         style="@style/textStyle"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/spinner_view_dimensions"
-        android:layout_marginStart="@dimen/medium_spacing"
         android:layout_toEndOf="@id/spinner_image_flag"
         android:gravity="center"
         android:src="@drawable/england_flag"

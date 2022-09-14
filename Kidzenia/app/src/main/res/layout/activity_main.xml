@@ -12,12 +12,16 @@
         android:layout_gravity="center" />
 
     <LinearLayout
-        android:layout_width="@dimen/main_menu_width"
-        android:layout_height="@dimen/main_menu_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/transparent_bg_with_border"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingStart="@dimen/spacing_2xlarge"
+        android:paddingTop="@dimen/spacing_small"
+        android:paddingEnd="@dimen/spacing_2xlarge"
+        android:paddingBottom="@dimen/spacing_small">
 
         <ImageView
             android:layout_width="@dimen/logo_dimensions"
@@ -27,7 +31,7 @@
             tools:ignore="ContentDescription" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/main_menu_button_width"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spinner_layout_top_spacing"
             android:layout_marginBottom="@dimen/spinner_layout_bottom_spacing"
@@ -44,7 +48,17 @@
                 android:id="@+id/main_lang_icon"
                 android:layout_width="@dimen/main_menu_spinner_dimensions"
                 android:layout_height="@dimen/main_menu_spinner_dimensions"
-                android:src="@drawable/ic_language"
+                android:foreground="?attr/selectableItemBackground"
+                android:src="@drawable/ic_language_24"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/main_sounds_icon"
+                android:layout_width="@dimen/main_menu_spinner_dimensions"
+                android:layout_height="@dimen/main_menu_spinner_dimensions"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:foreground="?attr/selectableItemBackground"
+                android:src="@drawable/ic_volume_on_24"
                 tools:ignore="ContentDescription" />
 
         </LinearLayout>
@@ -62,7 +76,7 @@
             style="@style/textStyle"
             android:layout_width="@dimen/main_menu_button_width"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/large_spacing"
+            android:layout_marginTop="@dimen/spacing_large"
             android:background="@drawable/button_style"
             android:text="@string/english_numbers" />
 
@@ -71,7 +85,7 @@
             style="@style/textStyle"
             android:layout_width="@dimen/main_menu_button_width"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/large_spacing"
+            android:layout_marginTop="@dimen/spacing_large"
             android:background="@drawable/button_style"
             android:text="@string/arabic_letters" />
 
@@ -80,7 +94,7 @@
             style="@style/textStyle"
             android:layout_width="@dimen/main_menu_button_width"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/large_spacing"
+            android:layout_marginTop="@dimen/spacing_large"
             android:background="@drawable/button_style"
             android:text="@string/arabic_numbers" />
 
@@ -89,15 +103,16 @@
             style="@style/textStyle"
             android:layout_width="@dimen/main_menu_button_width"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/large_spacing"
+            android:layout_marginTop="@dimen/spacing_large"
             android:background="@drawable/text_border"
+            android:minLines="2"
             android:text="@string/educational_videos"
             android:textColor="#FFF" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/xlarge_spacing"
+            android:layout_marginTop="@dimen/spacing_xlarge"
             android:orientation="horizontal">
 
             <ImageView
@@ -117,5 +132,4 @@
         </LinearLayout>
 
     </LinearLayout>
-
 </FrameLayout>
