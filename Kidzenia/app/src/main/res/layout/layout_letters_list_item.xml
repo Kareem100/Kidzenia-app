@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/text_highlight"
             android:textColor="@color/colorPrimary"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_large"
             tools:text="TEST 1" />
     </LinearLayout>
 
@@ -62,13 +62,11 @@
 
         <TextView
             android:id="@+id/pronounce_text"
-            style="@style/textStyle"
+            style="@style/textStylePlaceholder"
             android:layout_width="@dimen/img_dimensions"
             android:layout_height="wrap_content"
             android:background="@drawable/text_border"
-            android:text="@string/pronounce"
-            android:textColor="@color/colorTertiary"
-            android:textSize="@dimen/text_size_default" />
+            android:text="@string/pronounce" />
     </LinearLayout>
 
 </LinearLayout>

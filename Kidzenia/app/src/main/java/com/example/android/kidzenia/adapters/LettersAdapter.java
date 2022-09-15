@@ -2,6 +2,7 @@ package com.example.android.kidzenia.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -74,10 +76,14 @@ public class LettersAdapter extends RecyclerView.Adapter<LettersAdapter.LetterVi
             Glide.with(itemView.getContext()).asDrawable().load(animalAppleID).into(animalOrAppleView);
             itemNameView.setText(itemNameTxt);
 
-            if (MainActivity.currentLocale == MainActivity.CurrentLocale.ARABIC)
-                ((TextView)itemView.findViewById(R.id.pronounce_text)).setText("تـهـجـأ");
-            else
-                ((TextView)itemView.findViewById(R.id.pronounce_text)).setText("Pronounce");
+            if (MainActivity.currentLocale == MainActivity.CurrentLocale.ARABIC) {
+                ((TextView) itemView.findViewById(R.id.pronounce_text)).setText("تـهـجـأ");
+                ((TextView) itemView.findViewById(R.id.pronounce_text)).setTypeface(ResourcesCompat.getFont(itemView.getContext(), R.font.uthman), Typeface.BOLD);
+            }
+
+            if (itemNameTxt.charAt(0) < 'A' || itemNameTxt.charAt(0) > 'z') { // arabic activities
+                itemNameView.setTypeface(ResourcesCompat.getFont(itemView.getContext(), R.font.uthman), Typeface.BOLD);
+            }
         }
 
         @Override

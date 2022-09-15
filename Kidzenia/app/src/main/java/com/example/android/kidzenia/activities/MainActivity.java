@@ -2,9 +2,11 @@ package com.example.android.kidzenia.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -128,6 +130,8 @@ public class MainActivity extends AppCompatActivity {
                     languageModels.get(0).setLanguage("الانجليزية");
                     languageModels.get(1).setLanguage("العربية");
                     currentLocale = CurrentLocale.ARABIC;
+
+                    setArabicFontFamily();
                 } else {
                     englishLettersBtn.setText("ENGLISH LETTERS");
                     englishNumbersBtn.setText("ENGLISH NUMBERS");
@@ -137,6 +141,8 @@ public class MainActivity extends AppCompatActivity {
                     languageModels.get(0).setLanguage("English");
                     languageModels.get(1).setLanguage("Arabic");
                     currentLocale = CurrentLocale.ENGLISH;
+
+                    setEnglishFontFamily();
                 }
             }
 
@@ -144,6 +150,22 @@ public class MainActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
+    }
+
+    private void setArabicFontFamily() {
+        englishLettersBtn.setTypeface(ResourcesCompat.getFont(MainActivity.this, R.font.uthman), Typeface.BOLD);
+        englishNumbersBtn.setTypeface(ResourcesCompat.getFont(MainActivity.this, R.font.uthman), Typeface.BOLD);
+        arabicLettersBtn.setTypeface(ResourcesCompat.getFont(MainActivity.this, R.font.uthman), Typeface.BOLD);
+        arabicNumbersBtn.setTypeface(ResourcesCompat.getFont(MainActivity.this, R.font.uthman), Typeface.BOLD);
+        videosBtn.setTypeface(ResourcesCompat.getFont(MainActivity.this, R.font.uthman), Typeface.BOLD);
+    }
+
+    private void setEnglishFontFamily() {
+        englishLettersBtn.setTypeface(ResourcesCompat.getFont(MainActivity.this, R.font.comicz));
+        englishNumbersBtn.setTypeface(ResourcesCompat.getFont(MainActivity.this, R.font.comicz));
+        arabicLettersBtn.setTypeface(ResourcesCompat.getFont(MainActivity.this, R.font.comicz));
+        arabicNumbersBtn.setTypeface(ResourcesCompat.getFont(MainActivity.this, R.font.comicz));
+        videosBtn.setTypeface(ResourcesCompat.getFont(MainActivity.this, R.font.comicz));
     }
 
     private void releaseVideo() {

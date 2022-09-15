@@ -17,6 +17,10 @@
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/drawable/seekbar_thumb.xml" value="0.135" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/drawable/text_border.xml" value="0.1215" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/drawable/text_highlight.xml" value="0.1215" />
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/font-ar/font_ar.xml" value="0.17578125" />
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/font-ar/uthman_ar.xml" value="0.17578125" />
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/font-en-v26/font_en.xml" value="0.23333333333333334" />
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/font-en/font_en.xml" value="0.17578125" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/activity_display_data.xml" value="0.19166666666666668" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/activity_main.xml" value="0.15135135135135136" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/activity_splach.xml" value="0.18" />
@@ -24,7 +28,7 @@
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/activity_video_player.xml" value="0.153125" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/activity_videos.xml" value="0.153125" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/layout_lang_spinner.xml" value="0.33" />
-        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/layout_letters_list_item.xml" value="0.15135135135135136" />
+        <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/layout_letters_list_item.xml" value="0.153125" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/layout_video_custom_controls.xml" value="0.15234375" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/layout_videos_list_item.xml" value="0.1824074074074074" />
         <entry key="..\:/Projects/[GitHub]/Android/Kidzenia-app/Kidzenia/app/src/main/res/layout/list_item.xml" value="0.20416666666666666" />

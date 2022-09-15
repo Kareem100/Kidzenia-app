@@ -1,8 +1,10 @@
 package com.example.android.kidzenia.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.annotation.SuppressLint;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -36,6 +38,9 @@ public class VideoPlayerActivity extends AppCompatActivity {
         String videoTitle = getIntent().getStringExtra("video_title");
         Uri videoPath = Uri.parse(getIntent().getStringExtra("video_path"));
         ((TextView) findViewById(R.id.player_video_title_text)).setText(videoTitle);
+
+        if (MainActivity.currentLocale == MainActivity.CurrentLocale.ARABIC)
+            ((TextView) findViewById(R.id.player_video_title_text)).setTypeface(ResourcesCompat.getFont(this, R.font.uthman), Typeface.BOLD);
 
         seekBar = findViewById(R.id.player_seekbar);
         videoView = findViewById(R.id.player_video_view);

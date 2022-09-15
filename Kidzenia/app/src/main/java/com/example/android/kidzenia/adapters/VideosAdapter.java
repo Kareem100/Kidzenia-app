@@ -1,6 +1,7 @@
 package com.example.android.kidzenia.adapters;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -65,6 +67,10 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.VideosView
         public void bind(Uri videoPath, String videoName) {
             Glide.with(itemView.getContext()).load(videoPath).into(thumbnailImageView);
             nameTextView.setText(videoName);
+
+            if (videoName.charAt(0) < 'A' || videoName.charAt(0) > 'z') { // arabic strings
+                nameTextView.setTypeface(ResourcesCompat.getFont(itemView.getContext(), R.font.uthman), Typeface.BOLD);
+            }
         }
     }
 

@@ -12,15 +12,16 @@
         <item name="android:windowTranslucentNavigation">true</item>
 
         <!-- Theme customization here. -->
-        <item name="android:fontFamily">@font/comicz</item>
+        <item name="android:fontFamily">@font/uthman</item>
         <!-- <item name="android:background">@drawable/green_gradient_background</item> -->
     </style>
 
     <!-- Text Style -->
     <style name="textStyle">
         <item name="android:gravity">center</item>
-        <item name="android:textSize">@dimen/text_size_default</item>
+        <item name="android:textSize">@dimen/text_size_large</item>
         <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/colorSecondary</item>
         <item name="android:letterSpacing">@dimen/text_letters_spacing</item>
         <item name="android:padding">@dimen/spacing_small</item>
@@ -29,7 +30,7 @@
     <!-- Text Placeholders -->
     <style name="textStylePlaceholder">
         <item name="android:gravity">center</item>
-        <item name="android:textSize">@dimen/text_size_default</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textColor">@color/colorTertiary</item>
         <item name="android:letterSpacing">@dimen/text_letters_spacing</item>

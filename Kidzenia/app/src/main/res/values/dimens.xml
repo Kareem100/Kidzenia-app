@@ -3,6 +3,7 @@
     <dimen name="logo_dimensions">100dp</dimen>
     <dimen name="text_size_small">12sp</dimen>
     <dimen name="text_size_default">16sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
     <dimen name="text_letters_spacing">0.08</dimen>
     <dimen name="main_menu_button_width">220dp</dimen>
     <dimen name="spinner_layout_top_spacing">-10dp</dimen>
