@@ -107,7 +107,7 @@
             android:background="@drawable/text_border"
             android:minLines="2"
             android:text="@string/educational_videos"
-            android:textColor="#FFF" />
+            android:textColor="@android:color/white" />
 
         <LinearLayout
             android:layout_width="wrap_content"
