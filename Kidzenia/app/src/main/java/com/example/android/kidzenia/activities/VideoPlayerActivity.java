@@ -39,20 +39,22 @@ public class VideoPlayerActivity extends AppCompatActivity {
 
         seekBar = findViewById(R.id.player_seekbar);
         videoView = findViewById(R.id.player_video_view);
-        timeTextView = findViewById(R.id.player_video_time);
+        timeTextView = findViewById(R.id.player_video_time_text);
         customControlsLayout = findViewById(R.id.video_custom_controls_layout);
         ImageButton playPauseButton = findViewById(R.id.player_play_pause_button);
+        TextView durationTextView = findViewById(R.id.player_video_duration_text);
 
         videoView.setVideoURI(videoPath);
         videoView.setOnPreparedListener(mediaPlayer -> {
             seekBar.setMax(videoView.getDuration());
+            durationTextView.setText(formatTime(videoView.getDuration()));
             videoView.start();
         });
 
-        ((ImageButton) findViewById(R.id.player_replay_button))
+        findViewById(R.id.player_replay_button)
                 .setOnClickListener(view -> videoView.seekTo(videoView.getCurrentPosition() - _10SEC));
 
-        ((ImageButton) findViewById(R.id.player_forward_button))
+        findViewById(R.id.player_forward_button)
                 .setOnClickListener(view -> videoView.seekTo(videoView.getCurrentPosition() + _10SEC));
 
         playPauseButton.setOnClickListener(view -> {

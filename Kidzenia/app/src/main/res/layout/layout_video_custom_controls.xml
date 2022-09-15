@@ -18,7 +18,7 @@
         android:layout_marginTop="@dimen/spacing_xlarge"
         android:layout_marginEnd="@dimen/spacing_xlarge"
         android:layout_marginBottom="@dimen/spacing_xlarge"
-        android:textColor="#FFF"
+        android:textColor="@android:color/white"
         tools:text="Video Title" />
 
     <LinearLayout
@@ -68,24 +68,34 @@
         android:orientation="horizontal"
         android:padding="@dimen/spacing_medium">
 
+        <TextView
+            android:id="@+id/player_video_time_text"
+            style="@style/textStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_small"
+            tools:ignore="HardcodedText" />
+
         <SeekBar
             android:id="@+id/player_seekbar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="@dimen/spacing_small"
-            android:progressBackgroundTint="#FFF"
+            android:progressBackgroundTint="@android:color/white"
             android:progressTint="@color/colorPrimary"
             android:thumb="@drawable/seekbar_thumb" />
 
         <TextView
-            android:id="@+id/player_video_time"
+            android:id="@+id/player_video_duration_text"
             style="@style/textStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#FFF"
-            android:textSize="@dimen/small_text_size"
-            tools:text="Time" />
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_small"
+            tools:text="06:23" />
     </LinearLayout>
 
 </RelativeLayout>

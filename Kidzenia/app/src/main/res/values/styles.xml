@@ -20,7 +20,7 @@
     <style name="textStyle">
         <item name="android:gravity">center</item>
         <item name="fontFamily">@font/comicz</item>
-        <item name="android:textSize">@dimen/default_text_size</item>
+        <item name="android:textSize">@dimen/text_size_default</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textColor">@color/colorSecondary</item>
         <item name="android:letterSpacing">@dimen/text_letters_spacing</item>

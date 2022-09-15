@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="logo_dimensions">100dp</dimen>
-    <dimen name="main_menu_width">280dp</dimen>
-    <dimen name="main_menu_height">560dp</dimen>
-    <dimen name="small_text_size">12sp</dimen>
-    <dimen name="default_text_size">16sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_default">16sp</dimen>
     <dimen name="text_letters_spacing">0.08</dimen>
     <dimen name="main_menu_button_width">220dp</dimen>
     <dimen name="spinner_layout_top_spacing">-10dp</dimen>

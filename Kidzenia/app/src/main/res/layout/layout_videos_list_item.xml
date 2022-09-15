@@ -52,8 +52,8 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:src="@drawable/ic_play_24"
-                android:textColor="#FFF"
-                android:textSize="@dimen/small_text_size"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_small"
                 tools:text="Video Title" />
         </RelativeLayout>
 
